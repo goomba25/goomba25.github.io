@@ -283,11 +283,12 @@ defaults:
     values:
       layout: single
       author_profile: true
-      read_time: true
+      read_time: false  # 읽는데 걸리는 시간 표기
+      show_date: true # 포스팅 날짜 표기
       comments: true
       share: true
       related: true
- 
+
   # _pages
   - scope:
       path: ""
