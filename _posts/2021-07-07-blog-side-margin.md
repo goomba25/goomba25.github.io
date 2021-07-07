@@ -1,6 +1,6 @@
 ---
-title: "[GitHub 블로그] 폰트 크기 조절"
-excerpt: "_reset.scss를 수정해서 폰트 크기를 바꿔보자."
+title: "[GitHub 블로그] 사이드 여백 줄이기"
+excerpt: "_variables.scss의 Grid를 수정해서 좌우 여백 줄이기."
 
 categories:
   - Blog
