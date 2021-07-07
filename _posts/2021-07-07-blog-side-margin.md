@@ -26,8 +26,6 @@ _variables.scss 에 좌우 여백을 늘이거나 줄일 수 있는 스크립트
 
 ## /_sass/minimal-mistakes/_variables.scss 수정
 
-___
-
 해당 파일의 Grid 주석을 찾아보자. 아래와 같이 적혀있다.
 
 <br/>
