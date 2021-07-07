@@ -1,6 +1,6 @@
 ---
-title: "GitHub 블로그 폰트 크기 조절"
-excerpt: ""
+title: "[GitHub 블로그] 폰트 크기 조절"
+excerpt: "_reset.scss를 수정해서 폰트 크기를 바꿔보자."
 
 categories:
   - Blog

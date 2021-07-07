@@ -1,6 +1,6 @@
 ---
-title: "깃헙 블로그 포스팅하기"
-excerpt: "md(마트다운)을 사용하여 깃헙 블로그에 글 올리기"
+title: "[GitHub 블로그] 포스팅하기"
+excerpt: "md(마크다운)을 사용하여 블로그에 글 올리기"
 
 categories:
   - Blog
