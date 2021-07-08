@@ -5,13 +5,11 @@ excerpt: "_variables.scss의 Grid를 수정해서 좌우 여백 줄이기."
 categories:
   - Blog
 tags:
-  - [Blog, jekyll,Minimal-Mistakes, GitHub, Git]
+  - [Blog, jekyll, Minimal-Mistakes, GitHub, Git]
 
 toc: true
 toc_sticky: true
-toc_label: "목차"
 
-date: 2021-07-07
 last_modified_at: 2021-07-07
 ---
 

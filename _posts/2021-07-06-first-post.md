@@ -5,13 +5,11 @@ excerpt: "md(마크다운)을 사용하여 블로그에 글 올리기"
 categories:
   - Blog
 tags:
-  - [Blog, jekyll, GitHub, Git]
+  - [Blog, jekyll, Minimal-Mistakes, GitHub, Git]
 
 toc: true
 toc_sticky: true
-toc_label: "목차"
 
-date: 2021-07-06
 last_modified_at: 2021-07-06
 ---
 ## **블로그 작성법**
