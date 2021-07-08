@@ -20,13 +20,13 @@ last_modified_at: 2021-07-07
 따라서 코드블럭에서 정상적으로 텍스트를 확인할 수 없다.
 
 이때 사용 가능하게 하는 방법이 raw 메서드 이다.   
-\{%raw%} 와 \{%endraw%} 로 코드블럭을 감싸면   
+{%raw%} 와 {%endraw%} 로 코드블럭을 감싸면   
 범위 안에 있는 liquid 코드가 실행되지 않고 텍스트로 출력된다.
 
 ```html
 {%raw%}
-  {% if post.tags[0] != null %}
-		<p class="archive__item-excerpt"><i class="far fa-tags"></i> {{ post.tags }} </p>
-	{% endif %}
+{% if post.tags[0] != null %}
+  <p class="archive__item-excerpt"><i class="far fa-tags"></i> {{ post.tags }} </p>
+{% endif %}
 {%endraw%}
 ```
