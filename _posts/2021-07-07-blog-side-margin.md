@@ -5,7 +5,7 @@ excerpt: "_variables.scss의 Grid를 수정해서 좌우 여백 줄이기."
 categories:
   - Blog
 tags:
-  - [Blog, jekyll,Minimal-Mistakes GitHub, Git]
+  - [Blog, jekyll,Minimal-Mistakes, GitHub, Git]
 
 toc: true
 toc_sticky: true
@@ -28,8 +28,6 @@ _variables.scss 에 좌우 여백을 늘이거나 줄일 수 있는 스크립트
 
 해당 파일의 Grid 주석을 찾아보자. 아래와 같이 적혀있다.
 
-<br/>
-
 ```scss
 /*
    Grid
@@ -39,11 +37,7 @@ $right-sidebar-width: 300px !default;
 $right-sidebar-width-wide: 400px !default;
 ```
 
-<br/>
-
 이 부분을 아래와 같이 바꿔주었다.
-
-<br/>
 
 ```scss
 /*
@@ -58,7 +52,6 @@ $right-sidebar-width-wide: 250px !default;
 // $right-sidebar-width-wide: 400px !default;
 ```
 
-<br/>
 
 right-sidebar 라고 해서 오른쪽만 바뀌는 것은 아니다.   
 원래 있던 값이 필요할 수도 있으니 주석처리했다.
