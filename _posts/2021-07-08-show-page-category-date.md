@@ -38,11 +38,11 @@ last_modified_at: 2021-07-08
 
 {% highlight html %}
 {% raw %}
-{% if post.categories[0] != null %}
-      <p class="archive__item-excerpt"><i class="far fa-calendar-alt"></i> {{ post.date | date: "%m/%d/%Y" }} &nbsp; <i class="far fa-folder-open"></i> {{ post.categories }}</p>
-    {% else %}
-      <p class="archive__item-excerpt"><i class="far fa-calendar-alt"></i> {{ post.date | date: "%m/%d/%Y" }}
-    {% endif %}
+  {% if post.categories[0] != null %}
+    <p class="archive__item-excerpt"><i class="far fa-calendar-alt"></i> {{ post.date | date: "%m/%d/%Y" }} &nbsp; <i class="far fa-folder-open"></i> {{ post.categories }}</p>
+  {% else %}
+    <p class="archive__item-excerpt"><i class="far fa-calendar-alt"></i> {{ post.date | date: "%m/%d/%Y" }}
+  {% endif %}
 {% endraw %}
 {% endhighlight %}
 
@@ -80,7 +80,7 @@ ___
 
 {% highlight html %}
 {% raw %}
-{% if post.tags[0] != null %}
+  {% if post.tags[0] != null %}
 		<p class="archive__item-excerpt"><i class="far fa-tags"></i> {{ post.tags }} </p>
 	{% endif %}
 {% endraw %}
