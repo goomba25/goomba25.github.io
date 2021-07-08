@@ -20,7 +20,7 @@ last_modified_at: 2021-07-07
 따라서 코드블럭에서 정상적으로 텍스트를 확인할 수 없다.
 
 이때 사용 가능하게 하는 방법이 raw 메서드 이다.   
-{%raw%} "{%raw%}" {%endraw%} 와 {%raw%} "{%endraw%}"{%endraw%} 로 코드블럭을 감싸면   
+<code class="language-plaintext highlighter-rouge"> {%raw%} </code> 와 <code class="language-plaintext highlighter-rouge"> {%endraw%} </code> 로 코드블럭을 감싸면   
 범위 안에 있는 liquid 코드가 실행되지 않고 텍스트로 출력된다.
 
 ```html
