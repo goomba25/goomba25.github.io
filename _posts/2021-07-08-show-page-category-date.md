@@ -24,7 +24,6 @@ last_modified_at: 2021-07-08
 
 해당 파일을 찾아 \</h2> 태그가 끝나는 부분을 찾아보자.
 
-```html
 {% highlight html %}
 {% raw %}
     </h2>
@@ -34,11 +33,9 @@ last_modified_at: 2021-07-08
 </div>
 {% endraw %}
 {% endhighlight %}
-```
 
 \</h1> 이 끝나는 곳에 아래와 같이 입력해준다.
 
-```html
 {% highlight html %}
 {% raw %}
 {% if post.categories[0] != null %}
@@ -48,7 +45,6 @@ last_modified_at: 2021-07-08
     {% endif %}
 {% endraw %}
 {% endhighlight %}
-```
 
 ___
 
@@ -58,7 +54,6 @@ ___
 
 * 카테고리만 보여주기
 
-```html
 {% highlight html %}
 {% raw %}
 {% if post.categories[0] != null %}
@@ -66,11 +61,9 @@ ___
 {% endif %}
 {% endraw %}
 {% endhighlight %}
-```
 
 * 날짜만 보여주기
 
-```html
 {% highlight html %}
 {% raw %}
 {% if post.categories[0] != null %}
@@ -78,7 +71,6 @@ ___
 {% endif %}
 {% endraw %}
 {% endhighlight %}
-```
 
 ## 태그 보이기
 
@@ -86,7 +78,6 @@ ___
 
 아래의 스크립트를 넣어주면 된다.
 
-```html
 {% highlight html %}
 {% raw %}
 {% if post.tags[0] != null %}
@@ -94,4 +85,3 @@ ___
 	{% endif %}
 {% endraw %}
 {% endhighlight%}
-```
