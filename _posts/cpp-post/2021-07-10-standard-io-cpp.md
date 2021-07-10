@@ -5,7 +5,7 @@ excerpt: "C++ 의 표준 입출력 std::cin, std::cout"
 categories:
   - Cpp
 tags:
-  - [Cpp, std, 표준 입출력]
+  - [Cpp, std, iostream]
 
 toc: true
 toc_sticky: true
@@ -13,7 +13,7 @@ toc_sticky: true
 last_modified_at: 2021-07-10
 ---
 
-C++의 표준 입출력 <mark style="background-color: #b1b1b1; color: #ff7000">std::cin</mark>과 <mark style="background-color: #b1b1b1; color: #ff7000">std::cout</mark>은   
+C++의 표준 입출력 `std::cin`과 `std::cout`은   
 \<iostream> 라이브러리를 사용하며 std 네임스페이스에 속한다.
 
 cin 과 cout 은 쉬프트 연산자 <<, >> 를 통해 이루어진다.   
@@ -45,7 +45,7 @@ int main()
 
 문자, 정수, 실수 등을 서식 없이 출력할 수 있고, 연속으로 출력 또한 가능하다.
 
-**std::cout** 은 내부적으로 몇 가지의 메서드를 가지고 있다.
+`std::cout` 은 내부적으로 몇 가지의 메서드를 가지고 있다.
 
 ```cpp
 std::cout.put('a'); //  a
@@ -53,8 +53,8 @@ std::cout.put('\n');
 std::cout.write("Apple is red", 5); //  Apple
 ```
 
-**std::cout.put(문자)** 는 문자를 출력하고,   
-**std::cout.write(문자열, 정수)** 는 문자열의 n 번째까지 출력한다.
+`std::cout.put(문자)` 는 문자를 출력하고,   
+`std::cout.write(문자열, 정수)` 는 문자열의 n 번째까지 출력한다.
 
 ### 표준 출력의 std::endl
 
@@ -85,7 +85,7 @@ int main()
 
 cin 또한 연속적으로 입력이 가능하다. (스페이스, 엔터로 구분한다.)
 
-**std::cin** 은 내부적으로 몇 가지의 메서드를 가지고 있다.
+`std::cin` 은 내부적으로 몇 가지의 메서드를 가지고 있다.
 
 ```cpp
 int num;
@@ -100,9 +100,9 @@ if (std::cin.fail()) {
 }
 ```
 
-**std::fail** 함수는 올바른 시도일 경우 false, 아닐 경우 true 를 반환한다.
+`std::fail` 함수는 올바른 시도일 경우 false, 아닐 경우 true 를 반환한다.
 
-**std::clear** 함수는 cin 내부의 값을 초기화하는 함수이다.
+`std::clear` 함수는 cin 내부의 값을 초기화하는 함수이다.
 
 따라서 위에서 정수를 입력하면 Success 와 함께 값을 출력하고,   
 다른 타입의 값을 입력하면 Fail 과 함께 입력했던 값이 초기화된다.
