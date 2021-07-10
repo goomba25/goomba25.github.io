@@ -13,7 +13,7 @@ toc_sticky: true
 last_modified_at: 2021-07-10
 ---
 
-C++의 표준 입출력 std::cin과 std::cout은   
+C++의 표준 입출력 <mark style="background-color: #f1f1f1; color: #ff7000">**std::cin**</mark>과 <mark style="background-color: #f1f1f1; color: #ff7000">**std::cout**</mark>은   
 \<iostream> 라이브러리를 사용하며 std 네임스페이스에 속한다.
 
 cin 과 cout 은 쉬프트 연산자 <<, >> 를 통해 이루어진다.   
@@ -45,7 +45,7 @@ int main()
 
 문자, 정수, 실수 등을 서식 없이 출력할 수 있고, 연속으로 출력 또한 가능하다.
 
-std::cout 은 내부적으로 몇 가지의 메서드를 가지고 있다.
+**std::cout** 은 내부적으로 몇 가지의 메서드를 가지고 있다.
 
 ```cpp
 std::cout.put('a'); //  a
@@ -85,7 +85,7 @@ int main()
 
 cin 또한 연속적으로 입력이 가능하다. (스페이스, 엔터로 구분한다.)
 
-std::cin 은 내부적으로 몇 가지의 메서드를 가지고 있다.
+**std::cin** 은 내부적으로 몇 가지의 메서드를 가지고 있다.
 
 ```cpp
 int num;
