@@ -21,11 +21,19 @@
                     {% endif %}
                 {% endfor %}
             </ul>
-        <span class="nav__sub-title">C ++</span>
+        <span class="nav__sub-title">C 계열</span>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "C++" %}
+                    {% if category[0] == "Cpp" %}
                         <li><a href="/categories/Cpp" class="">C++ ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        <span class="nav__sub-title">Android</span>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Kotlin" %}
+                        <li><a href="/categories/Kotlin" class="">Kotlin ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
