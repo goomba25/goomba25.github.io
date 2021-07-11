@@ -61,6 +61,8 @@ author_profile: true
 layout을 categories를 지정했다.   
 permalink는 _config.yml의 category_archive설정의 path와 동일하다.
 
+즉, "Posts by Category" 라는 이름으로 카테고리 목록을 띄운다는 것이다.
+
 이렇게 하면 모든 게시글이 카테고리의 분류로 나뉘어 보여진다.
 
 ## 3. 태그 페이지 등록
