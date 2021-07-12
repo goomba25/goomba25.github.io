@@ -39,7 +39,7 @@ switch (조건)
 (결국 `default`의 코드를 실행할 것이다.)
 
 <h3>
-<mark style="color: #ff0000; font-weight: bold"> 알아두자 </mark>
+<mark style="background-color: #2e2e2e; color: #ff0000; font-weight: bold"> 알아두자 </mark>
 </h3>
 
 `switch` 조건문은 사용할 조건이 많지 않지만 가독성이 좋고 처리속도가 빠르다.   
