@@ -35,8 +35,16 @@
         <span class="nav__sub-title">ROS</span>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "ros tutorial" %}
-                        <li><a href="/categories/ROS" class="">ROS 튜토리얼 ({{category[1].size}})</a></li>
+                    {% if category[0] == "ros_tutorial" %}
+                        <li><a href="/categories/ros_tutorial" class="">ROS 튜토리얼 ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        <span class="nav__sub-title">Qt</span>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Qt" %}
+                        <li><a href="/categories/Qt" class="">Qt with C++ ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
