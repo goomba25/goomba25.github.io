@@ -56,7 +56,7 @@ std::cout.write("Apple is red", 5); //  Apple
 `std::cout.put(문자)` 는 문자를 출력하고,   
 `std::cout.write(문자열, 정수)` 는 문자열의 n 번째까지 출력한다.
 
-### 표준 출력의 std::endl
+## 표준 출력의 std::endl
 
 ```cpp
 std::cout << std::endl;

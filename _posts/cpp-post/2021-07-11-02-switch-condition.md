@@ -7,9 +7,6 @@ categories:
 tags:
   - [Cpp, 조건문]
 
-toc: true
-toc_sticky: true
-
 last_modified_at: 2021-07-11
 ---
 

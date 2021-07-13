@@ -7,8 +7,6 @@ categories:
 tags:
   - [Cpp, 연산자]
 
-toc: true
-toc_sticky: true
 
 last_modified_at: 2021-07-10
 ---

@@ -1,11 +1,10 @@
 ---
-title: "ROS Tutorial & Format"
+title: "Qt with Python (PyQt)"
 layout: archive
-permalink: /categories/ros_tutorial
+permalink: /categories/PyQt
 author_profile: true
 sidebar_main: true
 ---
 
-
-{% assign posts = site.categories.ros_tutorial %}
+{% assign posts = site.categories.PyQt %}
 {% for post in posts %} {% include archive-single.html type=page.entries_layout %} {% endfor %}

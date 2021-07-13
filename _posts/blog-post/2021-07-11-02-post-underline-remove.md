@@ -7,8 +7,8 @@ categories:
 tags:
   - [Blog, jekyll, Minimal-Mistakes, GitHub, Git]
 
-toc: true
-toc_sticky: true
+# toc: true
+# toc_sticky: true
 
 last_modified_at: 2021-07-11
 ---
