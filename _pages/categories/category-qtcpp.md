@@ -1,5 +1,5 @@
 ---
-title: "Qt (C++)"
+title: "Qt with C++"
 layout: archive
 permalink: /categories/Qt
 author_profile: true
