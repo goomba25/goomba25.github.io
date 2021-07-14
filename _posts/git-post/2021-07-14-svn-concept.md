@@ -1,0 +1,206 @@
+---
+title: "[SVN] SVN의 기초 개념과 명령어"
+excerpt: "SVN 의 최소한의 필요 지식을 정리한다"
+
+categories:
+  - Git
+tags:
+  - [SVN]
+
+toc: true
+
+last_modified_at: 2021-07-14
+---
+
+`SVN`은 `Git`과 유사한 툴이다. (둘다 무료, 공개 소프트웨어)
+
+여러 사람이 작업하는 프로젝트의 버전을 관리해주거나, 각자가 만든 소스의 통합을 해주는 등의   
+작업을 해주는 일종의 <mark style = "background-color: #2e2e2e; color: #C958FF; font-weight: bold;">형상 관리 / 소스 관리</mark> 도구이다.
+
+특징
+
+* Revision으로 파일 백업 가능
+* 소스의 버전 관리
+* 작업 이력 관리
+* 커밋마다 Revision이 1 증가
+
+
+## 용어
+
+#### Repository
+
+프로젝트 및 변경 정보, 소스는 이 저장소에 저장된다.   
+(대체로 한 프로젝트당 하나의 저장소)
+
+#### Trunk
+
+소스를 커밋하면 모이는 장소이다. 모든 개발 작업은 여기에서 이루어진다.   
+(내부에 프로젝트 파일 및 디렉토리)
+
+#### Branch
+
+나뭇가지라는 의미. 프로젝트에서 분리해야하는 소스나 파생되어 별도로 운영이 필요한 소스의 관리 목적으로 사용된다.
+
+#### Tag
+
+버전별로 소스를 따로 관리하는 공간이다. 특정 시점의 상태 보존 목적으로도 사용한다.   
+(장기적으로 저장)
+
+#### Revision
+
+클라이언트가 커밋하면 1 씩 증가한다.   
+(자동 증가 - 수정 불가)
+
+#### Head
+
+repository에 저장된 최신 revision을 가리킨다.
+
+#### Base
+
+클라이언트가 checkout, update 등을 통해 repository로부터 내려받은 revision을 가리킨다.   
+즉 현재 클라이언트 자신의 revision을 말한다.   
+(head와 base가 다르면 커밋이 불가능하다. 반드시 checkout, update 후에 커밋해야한다.)
+
+
+## 명령어
+
+#### Import
+
+프로젝트 시작 시, 빈 repository에 파일 및 디렉토리를 저장소에 등록한다.
+
+```bash
+svn import example_project_dir svn://<ip>/repository/trunk
+```
+
+#### Export
+
+서버로부터 순수하게 소스만을 받는다.
+
+```bash
+svn import example_project_dir svn://~/repository/trunk
+```
+
+#### Checkout
+
+서버로부터 소스를 받아온다.   
+`export`와는 다르게 버전관리를 위한 파일도 함께 온다. (.svn/)
+
+```bash
+svn checkout svn://<ip>/repository/trunk example_dir
+```
+
+#### Update
+
+클라이언트의 소스를 서버의 최신 revision으로 업데이트 한다.
+
+```bash
+svn update
+```
+
+#### Log
+
+revision 및 comment를 확인한다.
+
+```bash
+svn log
+```
+
+#### Revert
+
+커밋하기 이전에 사용할 수 있으며 클라이언트의 작업 내용을 이전 상태로 되돌린다.
+
+```bash
+svn revert example_dir/example.cpp
+```
+
+#### Diff
+
+다른 revision 소스파일 내용을 비교한다.
+
+```bash
+svn diff example.cpp // 해당 파일과 저장소의 파일 비교
+
+svn diff -r 4:6 // revision 4 와 6 의 차이 비교
+
+svn diff -r 2 // revision 2 와 현재 비교
+```
+
+#### Blame
+
+하나의 소스파일을 대상으로 각 revision에 대해 변경자가 누구인지 확인한다.
+
+```bash
+svn blame -r 3 example.cpp  // 출력 순서 : revision, 커밋 사용자ID, 소스
+```
+
+#### Lock
+
+해당 파일을 자신만이 수정할 수 있도록 설정한다.   
+락을 건 이유를 comment로 남길 수 있다. (unlock은 해제)
+
+```bash
+svn lock example.cpp
+```
+
+#### Delete
+
+해당 파일/디렉토리를 삭제한다.
+
+```bash
+svn delete example.cpp
+```
+
+#### List
+
+서버의 파일 리스트를 확인한다.
+
+```bash
+svn list svn://~/repository/trunk
+```
+
+#### Info
+
+해당 파일/디렉토리의 정보를 확인한다.
+
+```bash
+svn info
+
+svn info svn://~/repository/trunk
+
+svn info ./example.cpp
+```
+
+#### Move
+
+파일 및 디렉토리를 다른 장소로 옮기거나 이름을 변경한다.   
+(이름변경 명령어 rename 존재)
+
+```bash
+svn mv example.cpp diff_dir/
+
+svn mv example.cpp sample.cpp // rename 동일
+```
+
+#### Add
+
+새로운 소스파일을 추가한다.
+
+```bash
+svn add hello.cpp
+```
+
+#### Commit
+
+클라이언트에서 서버로 소스를 갱신하며 comment를 남길 수 있다.
+
+갱신하는 과정은 아래와 같다.
+
+* 서버로부터 checkout 또는 update한다.
+* delete, add, rename, move 등 소스를 수정/등록한다.
+* 해당 소스를 커밋한다.
+
+```bash
+svn commit
+
+svn commit -m "example.cpp를 sample.cpp로 변경, hello.cpp 추가"  //  comment 추가
+```
