@@ -1,11 +1,11 @@
 ---
 title: "[C++] 포인터와 동적 할당"
-excerpt: ""
+excerpt: "메모리의 동적 할당에 대해 알아보자"
 
 categories:
   - Cpp
 tags:
-  - [Cpp, 포인터]
+  - [Cpp, 포인터, 동적 할당]
 
 toc: true
 
