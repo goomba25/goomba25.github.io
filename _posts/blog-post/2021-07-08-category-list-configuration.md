@@ -35,7 +35,7 @@ tags:
 
 포스팅된 글의 마지막에 아래와 같이 설정된 것을 볼 수 있다.
 
-![images](/images/Screenshot1.png)
+![images](/images/blog-image/Screenshot1.png)
 
 하지만 카테고리와 태그를 클릭하면 404 Not Found 페이지가 뜬다.   
 링크로 연결된 페이지가 아직 없기 때문이다.

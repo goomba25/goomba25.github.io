@@ -23,7 +23,7 @@ last_modified_at: 2021-07-06
 
 거기서 해당 폰트를 클릭하고 select this style을 클릭하면 아래와 같은 @import 를 볼 수 있다.
 
-![image](/images/Screenshot_font.png)
+![image](/images/blog-image/Screenshot_font.png)
 
 style 태그 안의 주소를 복사하여 /assets/css/main.scss 에 추가해주자.
 

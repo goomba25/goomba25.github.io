@@ -81,7 +81,7 @@ sidebar_main: true
 
 이 페이지의 모습은 아래와 같다.
 
-![category-image](/images/Screenshot_category.png)
+![category-image](/images/blog-image/Screenshot_category.png)
 
 
 ## 해당 페이지를 사이드바에 띄우기
