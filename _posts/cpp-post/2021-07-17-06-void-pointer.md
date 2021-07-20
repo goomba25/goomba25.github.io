@@ -7,8 +7,6 @@ categories:
 tags:
   - [Cpp, 포인터]
 
-toc: true
-
 last_modified_at: 2021-07-17
 ---
 

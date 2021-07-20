@@ -8,6 +8,7 @@ tags:
   - [Cpp, 포인터, 동적 할당]
 
 toc: true
+toc_sticky: true
 
 last_modified_at: 2021-07-18
 ---

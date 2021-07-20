@@ -7,8 +7,6 @@ categories:
 tags:
   - [Cpp]
 
-toc: true
-
 last_modified_at: 2021-07-19
 ---
 
