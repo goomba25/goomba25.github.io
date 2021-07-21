@@ -1,6 +1,6 @@
 ---
 title: "[C++] 함수 포인터"
-excerpt: "같은 이름의 여러 함수를 만드는 기능, 오버로딩"
+excerpt: "함수를 가리키는 포인터, 함수 포인터"
 
 categories:
   - Cpp
