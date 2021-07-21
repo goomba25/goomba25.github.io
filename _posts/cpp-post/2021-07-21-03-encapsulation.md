@@ -5,7 +5,7 @@ excerpt: "캡슐화를 통한 코드 은닉의 방법을 알아보자"
 categories:
   - Cpp
 tags:
-  - [Cpp]
+  - [Cpp, Class]
 
 toc: true
 toc_sticky: true
