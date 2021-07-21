@@ -189,7 +189,7 @@ row와 column을 지정하여 위젯을 위치시킬 수 있다.
 
 상황에 따라 위젯 간의 거리, 레이아웃의 margin 등을 조절할 수 있다.
 
-row와 column의 stretch를 조절하고, span을 조절하여 크기를 차지하는 크기를 정할 수 있다.
+row와 column의 stretch를 조절하고, span을 조절하여 격자를 차지하는 크기를 조정할 수 있다.
 
 * mainwindow.h
 
