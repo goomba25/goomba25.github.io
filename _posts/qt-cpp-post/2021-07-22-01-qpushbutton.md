@@ -115,3 +115,8 @@ setCheckable(true) 와 함께 사용하면 위젯을 클릭 상태로 만들 수
 bool 값을 false로 설정하면 버튼을 클릭할 수 없는 상태로 만든다.
 
 반대되는 메서드로 setDisable(bool) 이 있다.
+
+#### isChecked()
+
+현재 버튼의 check 상태를 반환한다.   
+(눌려있다면 true를 반환한다.)
