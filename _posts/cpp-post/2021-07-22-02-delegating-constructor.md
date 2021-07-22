@@ -5,7 +5,7 @@ excerpt: "생성자를 위임하는 방법에 대해 알아보자"
 categories:
   - Cpp
 tags:
-  - [Cpp]
+  - [Cpp, Class]
 
 toc: true
 toc_sticky: true
