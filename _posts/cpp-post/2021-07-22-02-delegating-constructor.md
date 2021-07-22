@@ -1,5 +1,5 @@
 ---
-title: "[Qt] 위임 생성자"
+title: "[C++] 위임 생성자"
 excerpt: "생성자를 위임하는 방법에 대해 알아보자"
 
 categories:

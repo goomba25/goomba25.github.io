@@ -1,5 +1,5 @@
 ---
-title: "[Qt] 클래스 소멸자"
+title: "[C++] 클래스 소멸자"
 excerpt: "객체 소멸 시 호출되는 소멸자에 대해 알아보자"
 
 categories:
