@@ -7,6 +7,9 @@ categories:
 tags:
   - [Cpp, 연산자, 오버로딩, friend]
 
+toc: true
+toc_sticky: true
+
 last_modified_at: 2021-07-24
 ---
 
