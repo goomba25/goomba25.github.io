@@ -1,11 +1,11 @@
 ---
-title: "[C++] 대입 연산자의 오버로딩"
-excerpt: "대입 연산자의 오버로딩을 알아보자"
+title: "[C++] 복사 생성자"
+excerpt: "얕은 복사와 깊은 복사(복사 생성자)"
 
 categories:
   - Cpp
 tags:
-  - [Cpp, 연산자, 오버로딩]
+  - [Cpp, Class]
 
 toc : true
 toc_sticky: true
