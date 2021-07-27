@@ -7,7 +7,10 @@ categories:
 tags:
   - [Cpp, 연산자, 오버로딩]
 
-last_modified_at: 2021-07-25
+toc : true
+toc_sticky: true
+
+last_modified_at: 2021-07-27
 ---
 
 객체를 복사하는 방법은 두 가지가 있다.
