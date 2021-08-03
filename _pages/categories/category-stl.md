@@ -1,5 +1,5 @@
 ---
-title: "C++ STL"
+title: "C++ STL (Standard Template Library)"
 layout: archive
 permalink: /categories/STL
 author_profile: true
