@@ -20,7 +20,8 @@ last_modified_at: 2021-08-06
 > * unordered_multimap
 
 `Unordered Associate Container`의 특징은 해시 테이블로 이루어진다는 것이다.
-따라서 탐색 속도가 굉장히 빠르다.
+
+따라서 탐색 속도가 굉장히 빠르다. (`insert`, `find`, `erase` 연산이 굉장히 빠르다.)
 
 하지만 `해시 충돌`이 발생할 수 있는 위험이 따른다.
 
@@ -28,8 +29,6 @@ last_modified_at: 2021-08-06
 
 정렬되지 않는 `set`컨테이너라고 보면 된다.
 사용 방법도 동일하다.
-
-`insert`, `find`, `erase` 연산이 굉장히 빠르다. (O(1) 소요)
 
 `unordered_set`컨테이너를 사용하려면 \<unordered_set>을 `include`해야 한다.
 
