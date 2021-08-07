@@ -13,7 +13,7 @@ toc_sticky: true
 last_modified_at: 2021-08-04
 ---
 
-STL 컨테이너의 종류 중 하나인 `Associate Container`는 두 가지로 나뉜다.
+STL 컨테이너의 종류 중 하나인 <mark style="background-color: #3e3e3e; color: orange;">Associate Container</mark>는 두 가지로 나뉜다.
 * Ordered Associate Container
 * UnOrdered Associate Container
 

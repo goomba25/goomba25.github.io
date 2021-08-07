@@ -13,7 +13,7 @@ toc_sticky: true
 last_modified_at: 2021-08-06
 ---
 
-`Container Adapter`는 반복자를 지원하지 않는   
+<mark style="background-color: #3e3e3e; color: orange;">Container Adapter</mark>는 반복자를 지원하지 않는   
 기능이 제한되거나 변형된 컨테이너를 말한다.
 
 이는 다른 컨테이너 객체에 특정 작업을 수행하도록 돕는 기능을 가진다.

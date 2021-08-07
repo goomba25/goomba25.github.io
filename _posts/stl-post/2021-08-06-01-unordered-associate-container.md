@@ -19,7 +19,7 @@ last_modified_at: 2021-08-06
 > * unordered_multiset
 > * unordered_multimap
 
-`Unordered Associate Container`의 특징은 해시 테이블로 이루어진다는 것이다.
+<mark style="background-color: #3e3e3e; color: orange;">Unordered Associate Container</mark>의 특징은 해시 테이블로 이루어진다는 것이다.
 
 따라서 탐색 속도가 굉장히 빠르다. (`insert`, `find`, `erase` 연산이 굉장히 빠르다.)
 
