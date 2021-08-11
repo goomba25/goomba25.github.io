@@ -70,14 +70,14 @@ MainWindow::MainWindow(QWidget *parent)
     LabelInit();
     VBoxLayoutInit();
 
-    central_widget_ = new QWidget;
+    central_widget_ = new QWidget(this);
 
     this->setCentralWidget(central_widget_);
     central_widget_->setLayout(full_layout_);
 }
 
 void MainWindow::VBoxLayoutInit() {
-    full_layout_ = new QVBoxLayout;
+    full_layout_ = new QVBoxLayout(this);
 
     full_layout_->addWidget(label_);
     for (int i = 0; i < 2; i++) {
@@ -86,15 +86,15 @@ void MainWindow::VBoxLayoutInit() {
 }
 
 void MainWindow::ButtonInit() {
-    button_[0] = new QPushButton;
+    button_[0] = new QPushButton(this);
     button_[0]->setText("First Button");
 
-    button_[1] = new QPushButton;
+    button_[1] = new QPushButton(this);
     button_[1]->setText("Second Button");
 }
 
 void MainWindow::LabelInit() {
-    label_ = new QLabel;
+    label_ = new QLabel(this);
     label_->setText("This is Label");
     label_->setAlignment(Qt::AlignCenter);
 }
@@ -149,14 +149,14 @@ MainWindow::MainWindow(QWidget *parent)
     LabelInit();
     HBoxLayoutInit();
 
-    central_widget_ = new QWidget;
+    central_widget_ = new QWidget(this);
 
     this->setCentralWidget(central_widget_);
     central_widget_->setLayout(full_layout_);
 }
 
 void MainWindow::HBoxLayoutInit() {
-    full_layout_ = new QHBoxLayout;
+    full_layout_ = new QHBoxLayout(this);
 
     //  1 <- Percentage of widgets in layout
     full_layout_->addWidget(label_, 1);
@@ -166,15 +166,15 @@ void MainWindow::HBoxLayoutInit() {
 }
 
 void MainWindow::ButtonInit() {
-    button_[0] = new QPushButton;
+    button_[0] = new QPushButton(this);
     button_[0]->setText("First Button");
 
-    button_[1] = new QPushButton;
+    button_[1] = new QPushButton(this);
     button_[1]->setText("Second Button");
 }
 
 void MainWindow::LabelInit() {
-    label_ = new QLabel;
+    label_ = new QLabel(this);
     label_->setText("This is Label");
     label_->setAlignment(Qt::AlignCenter);
 }
@@ -233,7 +233,7 @@ MainWindow::MainWindow(QWidget *parent)
     LabelInit();
     GridLayoutInit();
 
-    central_widget_ = new QWidget;
+    central_widget_ = new QWidget(this);
 
     this->setCentralWidget(central_widget_);
     central_widget_->setLayout(full_layout_);
@@ -249,18 +249,18 @@ void MainWindow::GridLayoutInit() {
 }
 
 void MainWindow::ButtonInit() {
-    button_[0] = new QPushButton;
+    button_[0] = new QPushButton(this);
     button_[0]->setText("First Button");
 
-    button_[1] = new QPushButton;
+    button_[1] = new QPushButton(this);
     button_[1]->setText("Second Button");
 
-    button_[2] = new QPushButton;
+    button_[2] = new QPushButton(this);
     button_[2]->setText("Third Button");
 }
 
 void MainWindow::LabelInit() {
-    label_ = new QLabel;
+    label_ = new QLabel(this);
     label_->setText("This is Label");
     label_->setAlignment(Qt::AlignCenter);
 }
