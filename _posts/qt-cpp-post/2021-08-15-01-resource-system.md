@@ -33,7 +33,7 @@ last_modified_at: 2021-08-15
 ## resource build
 기존에 Qt에서 제공하는 `.pro`를 사용하여 빌드하는 경우,   
 
-```pro
+```
 RESOURCE  = resource_file_name.qrc
 ```
 
