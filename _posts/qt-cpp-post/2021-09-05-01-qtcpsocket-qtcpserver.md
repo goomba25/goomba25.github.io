@@ -48,7 +48,6 @@ public:
 
 private:
     QTcpServer* server_;
-    QTcpSocket* socket_;
 
     QWidget* center_;
     QStatusBar* statusbar_;
@@ -286,7 +285,7 @@ void ClientWidget::sendMessage()
 ```
 
 > connectToHost를 통해 해당 address/port와 연결을 시도하며,   
-전달할 메세지를 write를 통해 장치에 쓴다.
+전달할 메세지를 write를 통해 장치에 쓴다.ㄴ
 
 
 ## 유용한 기능
