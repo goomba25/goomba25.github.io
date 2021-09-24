@@ -10,7 +10,7 @@ tags:
 toc: true
 toc_sticky: true
 
-last_modified_at: 2021-09-22
+last_modified_at: 2021-09-24
 ---
 
 `Rectangle`은 사각형 영역의 아이템을 표시하기 위한 Type이다.
