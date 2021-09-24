@@ -101,3 +101,5 @@ ___
 GUI를 구현하고 나서 `Rectangle`을 보이지 않게 수정하려는 경우   
 `color`를 `transparent`로 설정하거나   
 `Rectangle`을 `Item`으로 변경하는 등의 방법을 사용할 수 있다.
+
+> [참조 - Rectangle QML Type](https://doc.qt.io/qt-5/qml-qtquick-rectangle.html)
