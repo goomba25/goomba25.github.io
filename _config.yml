@@ -102,7 +102,7 @@ analytics:
 # Site Author
 author:
   name             : "Hanseung Seo"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "/assets/github-io-profile-img.png" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "개발에 대해 공부하는 것을 즐거워하는 개발자.  아직은 부족하지만 천천히 그리고 꾸준히 성장하는 개발자가 되려는 청년"
   location         : "Republic of Korea"
   email            : "ajtwls0205@naver.com"
