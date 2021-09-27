@@ -59,4 +59,4 @@ ___
 `fillMode` 프로퍼티가 존재하는데 기본적으로 `Stretch` 로 설정되어 있으며   
 이미지의 `width`와 `height`를 지정하였기 때문에 이미지가 늘어났다.
 
-> [참조 - Image QML Type](https://doc.qt.io/qt-5/qml-qtquick-image.html#verticalAlignment-prop)
+> [참조 - Image QML Type](https://doc.qt.io/qt-5/qml-qtquick-image.html)
