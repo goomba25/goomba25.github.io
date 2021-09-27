@@ -34,8 +34,8 @@
 .archive__subtitle {
   margin: 1.414em 0 0.5em;
   padding-bottom: 0.5em;
-  font-size: $type-size-5;
-  color: $muted-text-color;
+  font-size: $type-size-3;
+  color: mix(#fff,$primary-color, 40%);
   border-bottom: 1px solid $border-color;
 
   + .list__item .archive__item-title {
@@ -44,11 +44,12 @@
 }
 
 .archive__item-title {
-  margin-bottom: 0.25em;
+  margin-bottom: 0.5em;
   font-family: $sans-serif-narrow;
-  line-height: initial;
+  line-height: 1.5; //initial;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-size: $type-size-4;
 
   a[rel="permalink"]::before {
     content: '';
