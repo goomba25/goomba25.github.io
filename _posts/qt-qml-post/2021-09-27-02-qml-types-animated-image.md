@@ -1,5 +1,5 @@
 ---
-title: "[Qt] QML Types - Image"
+title: "[Qt] QML Types - AnimatedImage"
 excerpt: "QML의 Type Object"
 
 categories:
@@ -10,7 +10,7 @@ tags:
 toc: true
 toc_sticky: true
 
-last_modified_at: 2021-09-24
+last_modified_at: 2021-09-27
 ---
 
 `Image`를 상속하는 `AnimatedImage`는 이미지를 로드하여 표시하기 위한 Type으로   
