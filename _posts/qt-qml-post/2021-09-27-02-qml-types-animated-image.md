@@ -54,4 +54,4 @@ ___
 
 `source`를 통해 이미지를 불러오는 것은 `Image`와 동일하다.
 
-> [참조 - Image QML Type](https://doc.qt.io/qt-5/qml-qtquick-animatedimage.html)
+> [참조 - AnimatedImage QML Type](https://doc.qt.io/qt-5/qml-qtquick-animatedimage.html)
