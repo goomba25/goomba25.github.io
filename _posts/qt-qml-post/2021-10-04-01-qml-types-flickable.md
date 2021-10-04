@@ -56,7 +56,8 @@ Window {
 }
 ```
 
-![image](/images/qml-image/Flickable_result.png)
+![image](/images/qml-image/Flickable_result1.png)
+![image](/images/qml-image/Flickable_result2.png)
 
 ___
 
