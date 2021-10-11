@@ -71,6 +71,7 @@ Window {
 ```
 
 ![image](/images/qml-image/MouseArea_result.png)
+![image](/images/qml-image/MouseArea_result2.png)
 
 ___
 
