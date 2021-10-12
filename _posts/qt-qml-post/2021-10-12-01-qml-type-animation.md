@@ -56,8 +56,7 @@ Window {
 
 * 0에서 400까지 `x`를 2초동안 이동하는 애니메이션 예제
 
-![image](/images/qml-image/NumberAnimation_result1.png)
-![image](/images/qml-image/NumberAnimation_result2.png)
+![image](/images/qml-image/Animation.gif)
 
 ___
 
