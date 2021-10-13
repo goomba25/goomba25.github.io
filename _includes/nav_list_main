@@ -13,14 +13,43 @@
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "Cpp" %}
-                        <li><a href="/categories/Cpp" class="">C++ 언어 ({{category[1].size}})</a></li>
+                        <li><a href="/categories/Cpp" class=""> C++ 언어 ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "STL" %}
-                        <li><a href="/categories/STL" class="">C++ STL ({{category[1].size}})</a></li>
+                        <li><a href="/categories/STL" class=""> C++ STL ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        <span class="nav__sub-title">Cross-Platform</span>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Flutter" %}
+                        <li><a href="/categories/Flutter" class=""> Flutter ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Qt" %}
+                        <li><a href="/categories/Qt" class=""> Qt with C++ ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "QML" %}
+                        <li><a href="/categories/QML" class=""> Qt with QML ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "PyQt" %}
+                        <li><a href="/categories/PyQt" class=""> PyQt ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
@@ -28,37 +57,7 @@
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "Kotlin" %}
-                        <li><a href="/categories/Kotlin" class="">Kotlin 언어 ({{category[1].size}})</a></li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-        <span class="nav__sub-title">ROS</span>
-            <ul>
-                {% for category in site.categories %}
-                    {% if category[0] == "ros_tutorial" %}
-                        <li><a href="/categories/ros_tutorial" class="">ROS 튜토리얼 ({{category[1].size}})</a></li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-        <span class="nav__sub-title">Qt</span>
-            <ul>
-                {% for category in site.categories %}
-                    {% if category[0] == "Qt" %}
-                        <li><a href="/categories/Qt" class="">Qt with C++ ({{category[1].size}})</a></li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-            <ul>
-                {% for category in site.categories %}
-                    {% if category[0] == "QML" %}
-                        <li><a href="/categories/QML" class="">Qt with QML ({{category[1].size}})</a></li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-            <ul>
-                {% for category in site.categories %}
-                    {% if category[0] == "PyQt" %}
-                        <li><a href="/categories/PyQt" class="">PyQt ({{category[1].size}})</a></li>
+                        <li><a href="/categories/Kotlin" class=""> Kotlin 언어 ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
@@ -66,28 +65,28 @@
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "Git" %}
-                        <li><a href="/categories/Git" class="">Git & GitHub 팁 ({{category[1].size}})</a></li>
+                        <li><a href="/categories/Git" class=""> Git & GitHub 팁 ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "Blog" %}
-                        <li><a href="/categories/Blog" class="">Blog ({{category[1].size}})</a></li>
+                        <li><a href="/categories/Blog" class=""> Blog ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "Etc" %}
-                        <li><a href="/categories/Etc" class="">잡다한 Tip ({{category[1].size}})</a></li>
+                        <li><a href="/categories/Etc" class=""> 잡다한 Tip ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "Daily" %}
-                        <li><a href="/categories/Daily" class="">일상 메모 ({{category[1].size}})</a></li>
+                        <li><a href="/categories/Daily" class=""> 일상 메모 ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
