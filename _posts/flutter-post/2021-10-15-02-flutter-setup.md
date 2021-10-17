@@ -10,7 +10,7 @@ tags:
 toc: true
 toc_sticky: true
 
-last_modified_at: 2021-10-16
+last_modified_at: 2021-10-15
 ---
 
 > `Flutter`를 설치했다는 가정하에 진행.
