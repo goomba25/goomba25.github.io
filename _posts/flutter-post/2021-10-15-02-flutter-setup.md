@@ -10,7 +10,7 @@ tags:
 toc: true
 toc_sticky: true
 
-last_modified_at: 2021-10-15
+last_modified_at: 2021-10-22
 ---
 
 > `Flutter`를 설치했다는 가정하에 진행.
@@ -38,13 +38,13 @@ flutter doctor
 export PATH="$PATH:$Home/snap/flutter/common/flutter/bin"
 ```
 
-## Linux Enable 허용
+## 데스크탑 어플리케이션 설정
 
-나는 데스크탑 어플리케이션도 개발할 예정이기 때문에   
-아래와 같은 설정을 했다.
+데스크탑 어플리케이션을 개발할 경우 아래와 같은 명령어로   
+데스크탑 지원을 구성해야 한다.
 
-```bash
-flutter config --enable-linux-desktop
-```
-
-* 위의 내용은 변경 사항이 있다면 언제든지 추가/삭제할 예정이다.
+|OS|Command|
+|:--|:--|
+|**Window**|flutter config --enable-window-desktop|
+|**macOS**|flutter config --enable-macos-desktop|
+|**Linux**|flutter config --enable-linux-desktop|
