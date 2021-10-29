@@ -63,6 +63,20 @@ private:
 };
 ```
 
+```cpp
+void setMyString(const QString &str)
+{
+    m_myString = str;
+    emit myStringChanged();
+}
+
+QString myString() const
+{
+    return m_myString;
+}
+```
+
+
 * 이제 QML에서는 `myString` 프로퍼티에 대한 접근을 요구할 때마다   
 각각의 함수들이 호출된다.
 
