@@ -1,19 +1,19 @@
 ---
-title: "[Flutter] Flutter 설치"
-excerpt: "Flutter 설치"
+title: "[Flutter] Flutter 설치 - Ubuntu"
+excerpt: "Ubuntu에서의 Flutter 설치"
 
 categories:
   - Flutter
 tags:
-  - [Flutter]
+  - [Flutter, Ubuntu]
 
 toc: true
 toc_sticky: true
 
-last_modified_at: 2021-10-13
+last_modified_at: 2021-10-31
 ---
 
-> 본인이 현재 사용하고 있는 PC의 운영체제는 `Ubuntu 20.04`이다.   
+> 사용한 PC의 운영체제는 `Ubuntu 20.04`이다.   
 > [공식 사이트](https://flutter.dev/docs/get-started/install/linux)의 내용을 참조한다.
 
 ## Flutter
