@@ -29,11 +29,12 @@ last_modified_at: 2021-10-31
 
 window 검색을 통해 <mark style="background-color: #3e3e3e; color: orange;">시스템 환경 변수 편집</mark>을 열어줍니다.
 
-<img src="/images/flutter-image/window_system_setting.png" width="200" height="200">
+![](/images/flutter-image/window_system_setting.png)
+
 
 위와 같은 창이 열리면 <mark style="background-color: #3e3e3e; color: orange;">환경 변수</mark>를 클릭합니다.
 
-<img src="/images/flutter-image/window_system_setting2.png" width="200" height="200">
+![](/images/flutter-image/window_system_setting2.png)
 
 사용자 변수의 `PATH`를 더블 클릭, 또는 편집을 눌러줍니다.   
 그리고 설치한 Flutter의 SDK 경로의 bin 폴더를 추가해줍니다.   
