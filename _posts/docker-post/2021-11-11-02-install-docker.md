@@ -62,29 +62,30 @@ $ sudo apt-get install docker-ce docker-ce-cli containerd.io
 
 2. 특정 버전을 설치하려는 경우 아래의 명령어를 통해 가능합니다.
 
-  * 먼저 사용 가능한 버전을 확인합니다. 
+* 먼저 사용 가능한 버전을 확인합니다. 
   
-  ```bash
-  $ apt-cache madison docker-ce
+```bash
+$ apt-cache madison docker-ce
 
-  docker-ce | 5:20.10.10~3-0~ubuntu-focal | https://download.docker.com/linux/ubuntu focal/stable amd64 Packages
-  docker-ce | 5:20.10.9~3-0~ubuntu-focal | https://download.docker.com/linux/ubuntu focal/stable amd64 Packages
-  docker-ce | 5:20.10.8~3-0~ubuntu-focal | https://download.docker.com/linux/ubuntu focal/stable amd64 Packages
-  docker-ce | 5:20.10.7~3-0~ubuntu-focal | https://download.docker.com/linux/ubuntu focal/stable amd64 Packages
-  docker-ce | 5:20.10.6~3-0~ubuntu-focal | https://download.docker.com/linux/ubuntu focal/stable amd64 Packages
-  ...
-  ```
+docker-ce | 5:20.10.10~3-0~ubuntu-focal | https://download.docker.com/linux/ubuntu focal/stable amd64 Packages
+docker-ce | 5:20.10.9~3-0~ubuntu-focal | https://download.docker.com/linux/ubuntu focal/stable amd64 Packages
+docker-ce | 5:20.10.8~3-0~ubuntu-focal | https://download.docker.com/linux/ubuntu focal/stable amd64 Packages
+docker-ce | 5:20.10.7~3-0~ubuntu-focal | https://download.docker.com/linux/ubuntu focal/stable amd64 Packages
+docker-ce | 5:20.10.6~3-0~ubuntu-focal | https://download.docker.com/linux/ubuntu focal/stable amd64 Packages
+...
+```
 
-  * 원하는 버전을 설치합니다.   
-  <VERSION_STRING> 위치에 해당 버전을 입력합니다. (ex. `5:20.10.8~3-0~ubuntu-focal`)
+* 원하는 버전을 설치합니다.   
+`<VERSION_STRING>` 위치에 해당 버전을 입력합니다. (ex. `5:20.10.8~3-0~ubuntu-focal`)
 
-  ```bash
-  sudo apt-get install docker-ce=<VERSION_STRING> docker-ce-cli=<VERSION_STRING> containerd.io
-  ```
+```bash
+sudo apt-get install docker-ce=<VERSION_STRING> docker-ce-cli=<VERSION_STRING> containerd.io
+```
 
-  * 설치된 버전을 확인합니다.
-  ```bash
-  $ docker -v
-  ```
+* 설치된 버전을 확인합니다.
+
+```bash
+$ docker -v
+```
 
 > 참고 : [https://docs.docker.com/engine/install/linux-postinstall/](https://docs.docker.com/engine/install/linux-postinstall/)
