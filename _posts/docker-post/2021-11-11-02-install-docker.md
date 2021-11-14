@@ -63,6 +63,7 @@ $ sudo apt-get install docker-ce docker-ce-cli containerd.io
 2. 특정 버전을 설치하려는 경우 아래의 명령어를 통해 가능합니다.
 
   * 먼저 사용 가능한 버전을 확인합니다. 
+  
   ```bash
   $ apt-cache madison docker-ce
 
