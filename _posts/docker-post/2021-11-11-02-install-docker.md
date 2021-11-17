@@ -10,7 +10,7 @@ tags:
 toc: true
 toc_sticky: true
 
-last_modified_at: 2021-11-11
+last_modified_at: 2021-11-18
 ---
 
 Docker를 설치하기 위한 최소 사양이 존재합니다. (21.11.11 기준)
