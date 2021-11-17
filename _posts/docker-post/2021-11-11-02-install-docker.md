@@ -79,7 +79,7 @@ docker-ce | 5:20.10.6~3-0~ubuntu-focal | https://download.docker.com/linux/ubunt
 `<VERSION_STRING>` 위치에 해당 버전을 입력합니다. (ex. `5:20.10.8~3-0~ubuntu-focal`)
 
 ```bash
-sudo apt-get install docker-ce=<VERSION_STRING> docker-ce-cli=<VERSION_STRING> containerd.io
+$ sudo apt-get install docker-ce=<VERSION_STRING> docker-ce-cli=<VERSION_STRING> containerd.io
 ```
 
 * 설치된 버전을 확인합니다.
