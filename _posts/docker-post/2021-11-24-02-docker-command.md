@@ -35,8 +35,6 @@ $ docker pull [option] name[:tag|@digest]
 
 </details>
 
-</details>
-
 <details markdown="1">
 <summary>이미지 삭제하기 [rmi] </summary>
 
