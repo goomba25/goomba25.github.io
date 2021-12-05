@@ -35,7 +35,14 @@ flutter doctor
 본인의 `Flutter`의 경로는 아래와 같았다.
 
 ```bash
-export PATH="$PATH:$Home/snap/flutter/common/flutter/bin"
+PATH="$PATH:$Home/snap/flutter/common/flutter/bin"
+```
+
+`stable`버전을 설치했다면 아래와 같이 본인의 설치 경로를 넣어주자.
+
+```bash
+// example
+PATH="$PATH:`pwd`/flutter/bin"
 ```
 
 ## 데스크탑 어플리케이션 설정
