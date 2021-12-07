@@ -2,6 +2,8 @@
 title: "[Flutter] Flutter 설정"
 excerpt: "flutter를 사용하기 위한 기본적인 설정들"
 
+classes: wide
+
 categories:
   - Flutter
 tags:

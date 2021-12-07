@@ -2,6 +2,8 @@
 title: "[Flutter] Android toolchain 문제"
 excerpt: ""
 
+classes: wide
+
 categories:
   - Flutter
 tags:

@@ -2,6 +2,8 @@
 title: "[Flutter] Flutter 설치 - Window"
 excerpt: "Window에서의 Flutter 설치"
 
+classes: wide
+
 categories:
   - Flutter
 tags:
