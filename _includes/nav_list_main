@@ -34,6 +34,13 @@
             </ul>
             <ul>
                 {% for category in site.categories %}
+                    {% if category[0] == "Dart" %}
+                        <li><a href="/categories/Dart" class=""> Dart ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
                     {% if category[0] == "Qt" %}
                         <li><a href="/categories/Qt" class=""> Qt with C++ ({{category[1].size}})</a></li>
                     {% endif %}
@@ -58,6 +65,13 @@
                 {% for category in site.categories %}
                     {% if category[0] == "Kotlin" %}
                         <li><a href="/categories/Kotlin" class=""> Kotlin 언어 ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "XML" %}
+                        <li><a href="/categories/XML" class=""> XML ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
