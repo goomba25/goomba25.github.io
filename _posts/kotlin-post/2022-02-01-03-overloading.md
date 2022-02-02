@@ -4,9 +4,6 @@ excerpt: "함수를 오버로딩하는 방법"
 
 classes: wide
 
-toc: true
-toc_sticky: true
-
 categories:
   - Kotlin
 tags:

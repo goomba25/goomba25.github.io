@@ -4,9 +4,6 @@ excerpt: "가변 인자"
 
 classes: wide
 
-toc: true
-toc_sticky: true
-
 categories:
   - Kotlin
 tags:
