@@ -57,3 +57,11 @@ PATH="$PATH:`pwd`/flutter/bin"
 |**Window**|flutter config --enable-window-desktop|
 |**macOS**|flutter config --enable-macos-desktop|
 |**Linux**|flutter config --enable-linux-desktop|
+
+### 데스크탑 off
+
+모든 데스크탑 어플리케이션을 false로 변경하려는 경우 아래와 같이 구성합니다.
+
+```bash
+$ flutter config --no-enable-macos-desktop --no-enable-windows-desktop --no-enable-linux-desktop
+```
