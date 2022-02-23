@@ -54,9 +54,9 @@ PATH="$PATH:`pwd`/flutter/bin"
 
 |OS|Command|
 |:--|:--|
-|**Window**|flutter config --enable-window-desktop|
-|**macOS**|flutter config --enable-macos-desktop|
-|**Linux**|flutter config --enable-linux-desktop|
+|**Window**|flutter config \--enable-window-desktop|
+|**macOS**|flutter config \--enable-macos-desktop|
+|**Linux**|flutter config \--enable-linux-desktop|
 
 ### 데스크탑 off
 
