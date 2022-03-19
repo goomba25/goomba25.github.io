@@ -12,9 +12,6 @@ categories:
 tags:
   - [GitHub]
 
-toc: true
-toc_sticky: true
-
 last_modified_at: 2022-03-05
 ---
 
