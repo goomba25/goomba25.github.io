@@ -4,15 +4,12 @@ excerpt: "GitHub 프로필에 배지 추가하기"
 
 classes: wide
 
-toc: true
-toc_sticky: true
-
 categories:
   - Git
 tags:
   - [GitHub]
 
-last_modified_at: 2022-03-05
+last_modified_at: 2022-03-19
 ---
 
 ![image](/images/git-image/badge-image.PNG)
