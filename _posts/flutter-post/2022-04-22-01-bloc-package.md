@@ -80,90 +80,90 @@ Cubit의 State 타입을 명시할 수도 있습니다.
 1. 먼저 MaterialApp을 BlocProvider로 선언해서   
 해당 위젯의 하위 위젯에서 Bloc에 접근이 가능하게 만들어줍니다. (Bloc과 Cubit 동일)
 
-```dart
-@override
-Widget build(BuildContext context) {
-  return BlocProvider<CountCubit>(
-    create: (context) => CountCubit(),
-    child: const MaterialApp(
-      home: Home(),
-    ),
-  );
-}
-```
+  ```dart
+  @override
+  Widget build(BuildContext context) {
+    return BlocProvider<CountCubit>(
+      create: (context) => CountCubit(),
+      child: const MaterialApp(
+        home: Home(),
+      ),
+    );
+  }
+  ```
 
-* 여러 Cubit을 사용하려면 **MultiBlocProvider**를 사용합니다.
+  * 여러 Cubit을 사용하려면 **MultiBlocProvider**를 사용합니다.
 
 2. BlocBuilder는 Cubit의 업데이트를 감지하고, 데이터가 업데이트 될 수 있도록 합니다.
 
-```dart
-BlocBuilder<CountCubit, int>(
-  builder: (context, state) {
-    return Text(
-      '$state',
-      textScaleFactor: 2.0,
-    );
-  },
-)
-```
+  ```dart
+  BlocBuilder<CountCubit, int>(
+    builder: (context, state) {
+      return Text(
+        '$state',
+        textScaleFactor: 2.0,
+      );
+    },
+  )
+  ```
 
-* builder 프로퍼티의 state가 Stream으로 전달되는 데이터입니다.   
-(state를 원하는 명칭으로 변경하셔도 됩니다.)
+  * builder 프로퍼티의 state가 Stream으로 전달되는 데이터입니다.   
+  (state를 원하는 명칭으로 변경하셔도 됩니다.)
 
 3. Cubit의 데이터를 변경하려고 함수를 호출하는 경우에는   
 **BlocProvider.of<Cubit>(context)**로 Cubit에 접근하거나 변수를 생성하여 접근하시면 됩니다.
 
-```dart
-BlocBuilder<CountCubit, int>(
-  builder: (context, state) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.end,
-      children: [
-        ElevatedButton(
-          child: const Icon(Icons.add),
-          onPressed: () {
-            BlocProvider.of<CountCubit>(context, listen: false)
-                .increment();
-          },
-        ),
-        const SizedBox(width: 20),
-        ElevatedButton(
-          child: const Icon(Icons.remove),
-          onPressed: () {
-            BlocProvider.of<CountCubit>(context, listen: false)
-                .decrement();
-          },
-        ),
-      ],
-    );
-  },
-)
-```
+  ```dart
+  BlocBuilder<CountCubit, int>(
+    builder: (context, state) {
+      return Row(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          ElevatedButton(
+            child: const Icon(Icons.add),
+            onPressed: () {
+              BlocProvider.of<CountCubit>(context, listen: false)
+                  .increment();
+            },
+          ),
+          const SizedBox(width: 20),
+          ElevatedButton(
+            child: const Icon(Icons.remove),
+            onPressed: () {
+              BlocProvider.of<CountCubit>(context, listen: false)
+                  .decrement();
+            },
+          ),
+        ],
+      );
+    },
+  )
+  ```
 
-* `listen: false`는 해당 함수가 호출되어도 위젯을 업데이트 하지 않겠다는 표시입니다.
+  * `listen: false`는 해당 함수가 호출되어도 위젯을 업데이트 하지 않겠다는 표시입니다.
 
-* 원래는 build를 호출하여 위젯이 업데이트 됩니다.
+  * 원래는 build를 호출하여 위젯이 업데이트 됩니다.
 
 4. Cubit 내에서 데이터의 변화를 확인할 수 있는 onChange, onError 등의 메서드를 제공합니다.
 
-```dart
-@override
-void onChange(Change<int> change) {
-  super.onChange(change);
-  print(change);        //    change 로그를 확인
-}
+  ```dart
+  @override
+  void onChange(Change<int> change) {
+    super.onChange(change);
+    print(change);        //    change 로그를 확인
+  }
 
--------------------
-I/flutter (26274): Change { currentState: 0, nextState: -1 }
-I/flutter (26274): Change { currentState: -1, nextState: -2 }
-I/flutter (26274): Change { currentState: -2, nextState: -3 }
-I/flutter (26274): Change { currentState: -3, nextState: -4 }
-I/flutter (26274): Change { currentState: -4, nextState: -5 }
-I/flutter (26274): Change { currentState: -5, nextState: -6 }
-I/flutter (26274): Change { currentState: -6, nextState: -7 }
-I/flutter (26274): Change { currentState: -7, nextState: -8 }
-...
-```
+  -------------------
+  I/flutter (26274): Change { currentState: 0, nextState: -1 }
+  I/flutter (26274): Change { currentState: -1, nextState: -2 }
+  I/flutter (26274): Change { currentState: -2, nextState: -3 }
+  I/flutter (26274): Change { currentState: -3, nextState: -4 }
+  I/flutter (26274): Change { currentState: -4, nextState: -5 }
+  I/flutter (26274): Change { currentState: -5, nextState: -6 }
+  I/flutter (26274): Change { currentState: -6, nextState: -7 }
+  I/flutter (26274): Change { currentState: -7, nextState: -8 }
+  ...
+  ```
 
 ### 샘플 (카운트 앱)
 
@@ -317,72 +317,72 @@ class DecrementCount extends CountEvent {}
 
 1. `on<Event>`메서드를 사용하여 Bloc생성자에 이벤트 핸들러를 등록합니다.
 
-```dart
-class CountBloc extends Bloc<CountEvent, int> {
-  CountBloc() : super(0) {
-    on<Increment>((event, emit) => emit(state + 1));
-    on<Decrement>((event, emit) => emit(state - 1));
+  ```dart
+  class CountBloc extends Bloc<CountEvent, int> {
+    CountBloc() : super(0) {
+      on<Increment>((event, emit) => emit(state + 1));
+      on<Decrement>((event, emit) => emit(state - 1));
+    }
   }
-}
-```
+  ```
 
 2. Cubit을 사용할 때와 동일하게 BlocProvider를 사용합니다.
 
-```dart
-@override
-Widget build(BuildContext context) {
-  return BlocProvider<CountBloc>(
-    create: (context) => CountBloc(),
-    child: const MaterialApp(
-      home: Home(),
-    ),
-  );
-}
-```
+  ```dart
+  @override
+  Widget build(BuildContext context) {
+    return BlocProvider<CountBloc>(
+      create: (context) => CountBloc(),
+      child: const MaterialApp(
+        home: Home(),
+      ),
+    );
+  }
+  ```
 
 3. BlocBuilder를 통해 Bloc의 업데이트를 감지하고, 위젯을 업데이트 할 수 있도록 만들어줍니다.
 
-```dart
-BlocBuilder<CountBloc, int>(
-  builder: (context, state) {
-    return Text(
-      '$state',
-      textScaleFactor: 2.0,
-    );
-  },
-)
-```
+  ```dart
+  BlocBuilder<CountBloc, int>(
+    builder: (context, state) {
+      return Text(
+        '$state',
+        textScaleFactor: 2.0,
+      );
+    },
+  )
+  ```
 
 4. Bloc의 데이터를 변경하려고 함수를 호출하는 경우에는 Cubit과 동일하게 **BlocProvider.of<Bloc>(content)**로 접근하거나 변수를 생성하여 접근합니다.
 
-```dart
-@override
-Widget build(BuildContext context) {
-  final _countBloc = BlocProvider.of<CountBloc>(context, listen: false);
+  ```dart
+  @override
+  Widget build(BuildContext context) {
+    final _countBloc = BlocProvider.of<CountBloc>(context, listen: false);
 
-// 중략
+  // 중략
 
-	IconButton(
-	  icon: const Icon(Icons.add),
-	  onPressed: () {
-	    _countBloc.add(Increment());
-	  },
-	),
-	IconButton(
-	  icon: const Icon(Icons.remove),
-	  onPressed: () {
-	    _countBloc.add(Decrement());
-	  },
-	),
-}
-```
+    IconButton(
+      icon: const Icon(Icons.add),
+      onPressed: () {
+        _countBloc.add(Increment());
+      },
+    ),
+    IconButton(
+      icon: const Icon(Icons.remove),
+      onPressed: () {
+        _countBloc.add(Decrement());
+      },
+    ),
+  }
+  ```
 
-* Cubit과 다르게 메서드를 직접 호출하지 않고 **add** 메서드를 사용하여 이벤트를 발생 시킵니다.
+  * Cubit과 다르게 메서드를 직접 호출하지 않고 **add** 메서드를 사용하여 이벤트를 발생 시킵니다.
 
-* listen: false는 Bloc의 데이터가 업데이트 되어도 해당 위젯을 업데이트하지 않겠다는 표시입니다.   
-불필요한 re-build 비용을 줄일 수 있습니다.
+  * listen: false는 Bloc의 데이터가 업데이트 되어도 해당 위젯을 업데이트하지 않겠다는 표시입니다.   
+  불필요한 re-build 비용을 줄일 수 있습니다.
 
-* 참고로 listen은 default로 false입니다.
+  * 참고로 listen은 default로 false입니다.
 
 5. Cubit과 동일하게 변화를 확인할 수 있는 메서드를 제공합니다. 하지만 Cubit과 다르게 onTransition 메서드를 추가로 제공합니다.
 
