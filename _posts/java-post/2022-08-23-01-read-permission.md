@@ -58,6 +58,9 @@ last_modified_at: 2022-08-23
                     new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
                     READ_EXTERNAL_STORAGE_REQUEST);
         }
+        else {
+            // 권한이 이미 허용된 경우의 기능
+        }
     }
     ```
 
