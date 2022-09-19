@@ -19,14 +19,17 @@ last_modified_at: 2022-09-19
 
 ### 레이아웃 기준
 
-* layout_alignParent... : 부모 레이아웃의 ...에 위치합니다.   
-  (여기서 ...은 Start, End, Top, ...등과 같은 위치입니다.)
-
-* layout_centerInParent : 부모 레이아웃의 정중앙에 위치합니다.
-* layout_centerHorizontal : 부모 레이아웃의 수평중앙에 위치합니다..
-* layout_centerVertical : 부모 레이아웃의 수직중앙에 위치합니다.
-
-위와 같은 방식은 부모 레이아웃을 기준으로 배치하는 방식입니다.
+|Attribute|설명|
+|--|--|
+|layout_centerInParent|부모 레이아웃의 정중앙에 위치|
+|layout_centerHorizontal|부모 레이아웃의 가로축 중앙에 위치|
+|layout_centerVertical|부모 레이아웃의 세로축 중앙에 위치|
+|layout_alignParentTop|부모 레이아웃의 상단에 위치|
+|layout_alignParentBottom|부모 레이아웃의 하단에 위치|
+|layout_alignParentRight|부모 레이아웃의 우측에 위치|
+|layout_alignParentLeft|부모 레이아웃의 좌측에 위치|
+|layout_alignParentStart|부모 레이아웃의 시작에 위치|
+|layout_alignParentEnd|부모 레이아웃의 끝에 위치|
 
 <details markdown="1">
 <summary> 부모 레이아웃 기준 예시 </summary>
@@ -89,20 +92,27 @@ last_modified_at: 2022-09-19
 </RelativeLayout>
 ```
 
+![image](/images/xml-image/relative_parent.png)
+
 </details>
 
-![image](/images/xml-image/relative_parent.png)
 
 ### 특정 뷰 기준
 
 뷰를 기준으로 상대적으로 위치시킵니다.   
-상대적으로 위치시키기 때문에 바로 옆에 위치한다던가 하지 않습니다. (바로 옆으로 붙일 수는 있습니다.)
 
 * 뷰를 기준으로 움직이려면 id가 부여되어 있어야 합니다.
 
-* layout_above : 특정 뷰의 위에 위치합니다.
-* layout_below : 특정 뷰의 아래에 위치합니다.
-* layout_to...Of : 특정 뷰의 ...에 위치합니다. (Right, Left, Top, Bottom, Start, End)
+|Attribute|설명|
+|--|--|
+|layout_above|특정 뷰의 상단 선상에 위치|
+|layout_below|특정 뷰의 하단 선상에 위치|
+|layout_toTopOf|특정 뷰의 상단에 위치|
+|layout_toBottomOf|특정 뷰의 하단에 위치|
+|layout_toRightOf|특정 뷰의 우측에 위치|
+|layout_toLeftOf|특정 뷰의 좌측에 위치|
+|layout_toStartOf|특정 뷰의 시작에 위치|
+|layout_toEndOf|특정 뷰의 끝에 위치|
 
 <details markdown="1">
 <summary> 특정 뷰 기준 예시 </summary>
@@ -153,6 +163,7 @@ last_modified_at: 2022-09-19
 </RelativeLayout>
 ```
 
+![image2](/images/xml-image/relative_view.png)
+
 </details>
 
-![image2](/images/xml-image/relative_view.png)
