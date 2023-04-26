@@ -1,5 +1,5 @@
 ---
-title: "[Ubuntu] Server에서 "
+title: "[Ubuntu] Server에서 원하는 User로 자동으로 로그인하기"
 excerpt: ""
 classes: wide
 
