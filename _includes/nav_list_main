@@ -12,6 +12,13 @@
         <span class="nav__sub-title">C 계열</span>
             <ul>
                 {% for category in site.categories %}
+                    {% if category[0] == "C" %}
+                        <li><a href="/categories/C" class=""> C 언어 ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
                     {% if category[0] == "Cpp" %}
                         <li><a href="/categories/Cpp" class=""> C++ 언어 ({{category[1].size}})</a></li>
                     {% endif %}
@@ -59,6 +66,14 @@
                         <li><a href="/categories/PyQt" class=""> PyQt ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
+            </ul>
+        <span class="nav__sub-title">Crypt</span>
+            <ul>
+            {% for category in site.categories %}
+                {% if category[0] == "Cryptography"%}
+                <li><a href="" class=""> 암호 이론 ({{category[1].size}})</a></li>
+                {% endif %}
+            {% endfor %}
             </ul>
         <span class="nav__sub-title">Android</span>
             <ul>
