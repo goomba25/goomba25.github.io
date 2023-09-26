@@ -71,7 +71,7 @@
             <ul>
             {% for category in site.categories %}
                 {% if category[0] == "Cryptography"%}
-                <li><a href="" class=""> 암호 이론 ({{category[1].size}})</a></li>
+                <li><a href="/categories/Crypt" class=""> 암호 이론 ({{category[1].size}})</a></li>
                 {% endif %}
             {% endfor %}
             </ul>

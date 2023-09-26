@@ -7,7 +7,7 @@ categories:
 tags:
   - [C, Cpp]
 
-last_modified_at: 2023-07-18
+last_modified_at: 2023-09-25
 ---
 
 ## 메모리 단편화
