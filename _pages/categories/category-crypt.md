@@ -1,7 +1,7 @@
 ---
 title: "암호"
 layout: archive
-permalink: /categories/Cryptography
+permalink: /categories/Crypt
 author_profile: true
 sidebar_main: true
 ---
