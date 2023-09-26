@@ -70,7 +70,7 @@
         <span class="nav__sub-title">Crypt</span>
             <ul>
             {% for category in site.categories %}
-                {% if category[0] == "Cryptography"%}
+                {% if category[0] == "Crypt"%}
                 <li><a href="/categories/Crypt" class=""> 암호 이론 ({{category[1].size}})</a></li>
                 {% endif %}
             {% endfor %}
@@ -114,12 +114,12 @@
                 {% endfor %}
             </ul>
             <ul>
-              {% for category in site.categories %}
-                  {% if category[0] == "Vue" %}
-                      <li><a href="/categories/Vue" class=""> Vue.js ({{category[1].size}})</a></li>
-                  {% endif %}
-              {% endfor %}
-          </ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Vue" %}
+                        <li><a href="/categories/Vue" class=""> Vue.js ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
         <span class="nav__sub-title">etc</span>
             <ul>
                 {% for category in site.categories %}
@@ -149,6 +149,6 @@
                     {% endif %}
                 {% endfor %}
             </ul>
-      </li>
-  </ul>
+        </li>
+    </ul>
 </nav>
