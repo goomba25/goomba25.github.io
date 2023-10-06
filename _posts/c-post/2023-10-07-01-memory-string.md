@@ -6,6 +6,8 @@ categories:
   - C
 tags:
   - [C, Cpp]
+toc: true
+toc_sticky: true
 
 last_modified_at: 2023-10-07
 ---
@@ -13,7 +15,7 @@ last_modified_at: 2023-10-07
 memset, memcpy, memmove는 모두 메모리 사용에 관여하는 함수입니다.   
 공통적으로 `string.h`, `memory.h` 헤더에 포함됩니다.
 
-## memset
+# memset
 
 메모리의 값을 특정 값으로 설정하고 초기화 할 수 있는 함수입니다.
 
@@ -43,8 +45,6 @@ void* memset(void* ptr, int value, size_t num)
   (void)memset(&sample, 'c', sizeof(SAMPLE));
   ```
 
----
-
 ## memcpy
 
 메모리의 값을 다른 메모리에 복사하는 함수입니다.
@@ -69,8 +69,6 @@ void* memcpy(void* dest, const void* source, size_t num)
 
   // stringghijk
   ```
-
----
 
 ## memmove
 
