@@ -69,11 +69,11 @@
             </ul>
         <span class="nav__sub-title">Crypt</span>
             <ul>
-            {% for category in site.categories %}
-                {% if category[0] == "Crypt"%}
-                <li><a href="/categories/Crypt" class=""> 암호 이론 ({{category[1].size}})</a></li>
-                {% endif %}
-            {% endfor %}
+                {% for category in site.categories %}
+                    {% if category[0] == "Crypt"%}
+                        <li><a href="/categories/Crypt" class=""> 암호 이론 ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
             </ul>
         <span class="nav__sub-title">Android</span>
             <ul>
