@@ -34,7 +34,9 @@ header a.page-name {
 }
 
 header .sub-menu {
+    display: flex;
     position: absolute;
+    align-items: center;
     right: 20px;
 }
 
@@ -57,4 +59,44 @@ header .sub-menu ul.menu li a {
 
 header .sub-menu ul.menu li a:hover {
     color: #000;
+}
+
+/* Header - search */
+header .sub-menu .search {
+    height: 30px;
+    position: relative;
+    margin: auto;
+}
+
+header .sub-menu .search input {
+    width: 36px;
+    height: 30px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 5px;
+    outline: none;
+    background-color: #fff;
+    color: #777;
+    transition: width .3s;
+    padding: 4px 10px
+}
+
+header .sub-menu .search input:focus {
+    width: 200px;
+    border-color: #669900;
+}
+
+header .sub-menu .search .material-icons {
+    height: 24px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    right: 5px;
+    transition: .3s;
+}
+
+header .sub-menu .search.focused .material-icons {
+    opacity: 0;
 }
