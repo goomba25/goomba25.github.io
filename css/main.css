@@ -32,3 +32,29 @@ header a.page-name {
     position: absolute;
     left: 15px;
 }
+
+header .sub-menu {
+    position: absolute;
+    right: 20px;
+}
+
+header .sub-menu ul.menu {
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header .sub-menu ul.menu li {
+    list-style: none;
+}
+
+header .sub-menu ul.menu li a {
+    display: block;
+    color: #656565;
+    font-size: 20px;
+    font-weight: 400;
+    padding: 10px 16px;
+}
+
+header .sub-menu ul.menu li a:hover {
+    color: #000;
+}
