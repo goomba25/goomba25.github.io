@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: "Goomba's Pages",
   description: "Goomba's Github pages, using NextJS",
   icons: {
-    icon: '/favicon.png',
+    icon: "/favicon.ico",
   },
 };
 
