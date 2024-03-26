@@ -1,0 +1,13 @@
+.global {
+  background-color: #272727;
+  border-top: 1px solid #333;
+  padding: 40px 0 60px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.copyright {
+  color: #999;
+  font-size: 14px;
+  text-align: center;
+}
