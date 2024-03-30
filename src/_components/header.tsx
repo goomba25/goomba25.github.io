@@ -13,7 +13,7 @@ export default function Header() {
             <Link href="/" className={HeaderStyle.nav_link}>Profile</Link>
           </li>
           <li className={HeaderStyle.list_item}>
-            <Link href="/" className={HeaderStyle.nav_link}>Archive</Link>
+            <Link href="/archive" className={HeaderStyle.nav_link}>Archive</Link>
           </li>
         </ul>
       </nav>
