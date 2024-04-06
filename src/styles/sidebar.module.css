@@ -1,0 +1,23 @@
+.global {
+  width: 18%;
+  float: left;
+  background-color: #d6d6d6;
+  color: hsl(271, 76%, 53%);
+  padding: 10px 20px;
+}
+
+.class {
+  font-weight: bold;
+  font-size: 22px;
+  color: darkslategray;
+  margin: 10px;
+}
+
+.classItem {
+  display: block;
+  font-weight: 500;
+  font-size: 16px;
+  color: #4b4b4b;
+  margin: 5px 30px;
+  padding: 5px;
+}
