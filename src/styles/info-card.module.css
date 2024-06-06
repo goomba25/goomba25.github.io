@@ -1,0 +1,25 @@
+.global {
+  width: 15rem;
+  padding: 10px 10px;
+}
+
+.cardView {
+  padding: 10px 30px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 5px 5px 10px black
+}
+
+.titleText {
+  color: black;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 2px 2px;
+}
+
+.infoText {
+  color: darkslategray;
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 2px 2px;
+}
