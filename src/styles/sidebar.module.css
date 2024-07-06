@@ -1,0 +1,21 @@
+.sidebar {
+  width: 200px;
+  padding: 1rem;
+  background-color: #f4f4f4;
+  border-right: 1px solid #ddd;
+}
+
+.categories {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 1000;
+  }
+}

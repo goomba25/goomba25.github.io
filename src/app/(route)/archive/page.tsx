@@ -1,7 +1,11 @@
+import React from "react"
+
 export default function Archive() {
   return (
     <div>
-      Archive page
+      <h1>
+        Archive page
+      </h1>
     </div>
   )
 }

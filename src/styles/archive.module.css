@@ -1,23 +1,8 @@
-/* /app/HomePage.module.css */
-.container {
+.layout {
   display: flex;
-  flex-direction: column;
-  height: 100vh;
 }
 
 .content {
-  flex-grow: 1;
-  margin-left: 250px;
-  padding: 20px;
-  transition: margin-left 0.3s ease;
-}
-
-.content.shifted {
-  margin-left: 0;
-}
-
-@media (max-width: 768px) {
-  .content {
-    margin-left: 0;
-  }
+  flex: 1;
+  padding: 1rem;
 }
