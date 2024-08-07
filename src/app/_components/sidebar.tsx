@@ -1,18 +1,24 @@
-import Link from "next/link";
+import Link from 'next/link'
+import { CategoryLists } from '@/_lib/categoryLists'
 import styles from "@/styles/sidebar.module.css"
 
 export default function Sidebar() {
   return (
-    <div className={styles.sidebar}>
-      <h2>Categories</h2>
-      <ul className={styles.categories}>
-        <li>
-          <Link href="/archive/categories/category_c">C 언어</Link>
-        </li>
-        <li>
-          <Link href="/archive/categories/category_cpp">C++ 언어</Link>
-        </li>
-      </ul>
-    </div>
-  );
+    <aside className={styles.sidebar}>
+      {CategoryLists.map((section) => (
+        <div key={section.title} className={styles.sidebarSection}>
+          <h3 className={styles.sidebarTitle}>{section.title}</h3>
+          <ul className={styles.sidebarList}>
+            {section.items.map((item) => (
+              <li key={item.slug} className={styles.sidebarItem}>
+                <Link href={`/archive/${item.slug}`}>
+                  {item.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </aside>
+  )
 }

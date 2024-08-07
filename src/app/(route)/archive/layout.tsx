@@ -1,5 +1,5 @@
-import styles from "@/styles/archive.module.css"
-import Sidebar from "@/app/_components/sidebar"
+import Sidebar from "@/app/_components/Sidebar"
+import styles from "@/styles/_layouts/sublayout.module.css"
 
 export default function ArchiveLayout({
   children,
@@ -8,10 +8,10 @@ export default function ArchiveLayout({
 }) {
   return (
     <div className={styles.layout}>
-      <Sidebar/>
-      <div className={styles.content}>
-        {children}
+      <div className={styles.sidebar}>
+        <Sidebar />
       </div>
+      <div className={styles.content}>{children}</div>
     </div>
   );
 }

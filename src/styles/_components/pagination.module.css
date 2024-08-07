@@ -1,0 +1,22 @@
+.pagination {
+  margin-top: 2rem;
+}
+
+.pagination_list {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  padding: 0;
+}
+
+.pagination_link {
+  padding: 0.5rem 1rem;
+  margin: 0 0.25rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+}
+
+.pagination_link.active {
+  background-color: #0070f3;
+  color: white;
+}

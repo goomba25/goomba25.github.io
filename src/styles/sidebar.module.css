@@ -1,21 +1,24 @@
 .sidebar {
-  width: 200px;
   padding: 1rem;
-  background-color: #f4f4f4;
-  border-right: 1px solid #ddd;
+  background-color: #f7fafc;
+  border-radius: 4px;
 }
 
-.categories {
-  display: flex;
-  flex-direction: column;
+.sidebarSection {
+  margin-bottom: 1.5rem;
 }
 
-@media (max-width: 768px) {
-  .sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    z-index: 1000;
-  }
+.sidebarTitle {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.sidebarList {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebarItem {
+  margin-bottom: 0.25rem;
 }
