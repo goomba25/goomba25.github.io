@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import Header from "@/app/_components/layout/header";
-import Footer from "@/app/_components/layout/footer";
+import Header from "@/app/_components/Header";
+import Footer from "@/app/_components/Footer";
+import ScrollToTopButton from "@/app/_components/ScrollToTopButton"
 import "@/styles/globals.css";
+import styles from "@/styles/_layouts/layout.module.css"
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,9 +24,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Header/>
-        {children}
-        <Footer/>
+        <Header />
+        <main className={styles.main}>{children}</main>
+        <Footer />
+        <ScrollToTopButton />
       </body>
     </html>
   );
