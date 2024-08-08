@@ -11,7 +11,7 @@ export default function PostList({ posts } : PostListProps) {
     <ul className={styles.postList}>
       {posts.map((post) => (
         <li key={post.slug} className={styles.postItem}>
-          <Link href={`/posts/${post.category}/${post.slug}`} className={styles.postTitle}>
+          <Link href={`/_posts/${post.slug}`} className={styles.postTitle}>
             {post.title}
           </Link>
           <p className={styles.postDate}>{post.date}</p>
