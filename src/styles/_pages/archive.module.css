@@ -7,3 +7,10 @@
   font-weight: bold;
   margin-bottom: 1rem;
 }
+
+.noPostsMessage {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #666;
+  margin-top: 2rem;
+}

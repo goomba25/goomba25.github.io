@@ -6,9 +6,13 @@ import { Post } from "@/_lib/_interface/post"
 
 const postsDirectory = path.join(process.cwd(), '_posts')
 
+function formatDate(date: Date): string {
+  return date.toISOString().split('T')[0];
+}
+
 export function getAllPosts() : Post[] {
   const posts = getAllPostsRecursive(postsDirectory);
-  return posts.sort((a,b) => a.date < b.date ? 1 : -1);
+  return posts.sort((a,b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 }
 
 function getAllPostsRecursive(dir: string) : Post[] {
@@ -25,13 +29,11 @@ function getAllPostsRecursive(dir: string) : Post[] {
       const fileContents = fs.readFileSync(filePath, 'utf-8');
       const { data, content } = matter(fileContents);
       const slug = file.replace(/\.mdx?$/, '');
-      const category = path.relative(postsDirectory, dir);
 
       posts.push({
         slug,
-        category,
         title: data.title,
-        date: data.date,
+        date: data.date ? formatDate(new Date(data.date)) : '',
         excerpt: data.excerpt || '',
         content,
         categories: data.categories || [],
@@ -43,24 +45,23 @@ function getAllPostsRecursive(dir: string) : Post[] {
 }
 
 export function getPostsByCategory(category: string) : Post[] {
-  return getAllPosts().filter(post => post.category === category);
+  return getAllPosts().filter(post => post.categories.includes(category));
 }
 
-export async function getPostBySlug(category: string, slug: string) : Promise<Post> {
-  const fullPath = path.join(postsDirectory, category, `${slug}.mdx`);
-  const fileContents = fs.readFileSync(fullPath, 'utf-8');
-  const { data, content } = matter(fileContents);
-  const mdxSource = await serialize(content);
+export async function getPostBySlug(slug: string) : Promise<Post> {
+  const files = getAllPosts();
+  const post = files.find(file => file.slug === slug);
+
+  if (!post) {
+    throw new Error(`Post with slug ${slug} not found`);
+  }
+
+  const mdxSource = await serialize(post.content as string);
 
   return {
-    slug,
-    category,
-    title: data.title,
-    date: data.date,
-    excerpt: data.excerpt || '',
+    ...post,
     content: mdxSource,
-    categories: data.categories || [],
-  }
+  };
 }
 
 export function searchPosts(searchTerm: string): Post[] {
