@@ -11,7 +11,9 @@ export default function Archive() {
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>All Posts</h1>
-      <PostList posts={posts.slice((currentPage - 1) * postsPerPage, currentPage * postsPerPage)} />
+      <PostList posts={posts.slice((currentPage - 1) * postsPerPage,
+        currentPage * postsPerPage)}
+        category="all" />
       <Pagination totalPosts={posts.length} postsPerPage={postsPerPage} currentPage={currentPage} />
     </div>
   )
