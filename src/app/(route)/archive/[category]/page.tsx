@@ -9,10 +9,13 @@ export default async function CategoryPage({params}: {params: {category: string}
   const currentPage = 1;
   const postsPerPage = 5;
 
+  const categoryItem:any = CategoryLists.flatMap(section => section.items).find(item => item.slug === params.category);
+  const displayName:string = categoryItem ? categoryItem.displayName : params.category;
+
   if (posts.length === 0) {
     return (
       <div className={styles.container}>
-        <h1 className={styles.title}>{params.category} Posts</h1>
+        <h1 className={styles.title}>'{displayName}' List</h1>
         <p className={styles.noPostsMessage}>No Post.</p>
       </div>
     );
@@ -20,7 +23,7 @@ export default async function CategoryPage({params}: {params: {category: string}
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>{params.category} Posts</h1>
+      <h1 className={styles.title}>'{displayName}' List</h1>
       <PostList posts={posts.slice((currentPage - 1) * postsPerPage, currentPage * postsPerPage)} />
       <Pagination totalPosts={posts.length} postsPerPage={postsPerPage} currentPage={currentPage} />
     </div>

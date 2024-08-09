@@ -12,7 +12,15 @@ function formatDate(date: Date): string {
 
 export function getAllPosts() : Post[] {
   const posts = getAllPostsRecursive(postsDirectory);
-  return posts.sort((a,b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  return posts.sort((a,b) => {
+    const dateComparison = new Date(b.date).getTime() - new Date(a.date).getTime()
+
+    if (dateComparison === 0) {
+      return a.title.localeCompare(b.title, 'en', { sensitivity: 'base' });
+    }
+
+    return dateComparison;
+  });
 }
 
 function getAllPostsRecursive(dir: string) : Post[] {
@@ -64,11 +72,11 @@ export async function getPostBySlug(slug: string) : Promise<Post> {
   };
 }
 
-export function searchPosts(searchTerm: string): Post[] {
-  const allPosts = getAllPosts();
-  return allPosts.filter(post => {
-    const contentString = typeof post.content === 'string' ? post.content : JSON.stringify(post.content);
-    return post.title.toLowerCase().includes(searchTerm.toLowerCase()) 
-            || contentString.toLowerCase().includes(searchTerm.toLowerCase());
-  });
-}
+// export function searchPosts(searchTerm: string): Post[] {
+//   const allPosts = getAllPosts();
+//   return allPosts.filter(post => {
+//     const contentString = typeof post.content === 'string' ? post.content : JSON.stringify(post.content);
+//     return post.title.toLowerCase().includes(searchTerm.toLowerCase()) 
+//             || contentString.toLowerCase().includes(searchTerm.toLowerCase());
+//   });
+// }
