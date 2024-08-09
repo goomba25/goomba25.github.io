@@ -15,7 +15,7 @@ export default async function CategoryPage({params}: {params: {category: string}
   if (posts.length === 0) {
     return (
       <div className={styles.container}>
-        <h1 className={styles.title}>'{displayName}' List</h1>
+        <h1 className={styles.title}>&apos;{displayName}&apos; List</h1>
         <p className={styles.noPostsMessage}>No Post.</p>
       </div>
     );
@@ -23,7 +23,7 @@ export default async function CategoryPage({params}: {params: {category: string}
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>'{displayName}' List</h1>
+      <h1 className={styles.title}>&apos;{displayName}&apos; List</h1>
       <PostList posts={posts.slice((currentPage - 1) * postsPerPage, 
         currentPage * postsPerPage)}
         category={params.category} />
