@@ -1,10 +1,19 @@
-import { MDXRemoteSerializeResult } from "next-mdx-remote";
+import { ReactElement } from "react";
 
 export interface Post {
   slug: string;
   title: string;
   date: string;
   excerpt: string;
-  content: string | MDXRemoteSerializeResult<Record<string, unknown>, Record<string, unknown>>;
+  content: string;
   categories: string[];
+}
+
+export interface SerializedPost extends Omit<Post, 'content'> {
+  content: ReactElement;
+}
+
+export interface PostListProps {
+  posts: Post[];
+  category: string;
 }

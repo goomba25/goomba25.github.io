@@ -1,8 +1,8 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
-import { serialize } from 'next-mdx-remote/serialize'
-import { Post } from "@/_lib/_interface/post"
+import { compileMDX } from 'next-mdx-remote/rsc'
+import { Post, SerializedPost } from "@/_lib/_interface/post"
 
 const postsDirectory = path.join(process.cwd(), '_posts')
 
@@ -56,27 +56,21 @@ export function getPostsByCategory(category: string) : Post[] {
   return getAllPosts().filter(post => post.categories.includes(category));
 }
 
-export async function getPostBySlug(slug: string) : Promise<Post> {
+export async function getPostBySlug(category: string, slug: string) : Promise<SerializedPost> {
   const files = getAllPosts();
-  const post = files.find(file => file.slug === slug);
+  const post = files.find(p => p.slug === slug && p.categories.includes(category));
 
   if (!post) {
-    throw new Error(`Post with slug ${slug} not found`);
+    throw new Error(`Post with slug ${slug} in category ${category} not found`);
   }
 
-  const mdxSource = await serialize(post.content as string);
+  const { content } = await compileMDX<{ title: string }>({
+    source: post.content,
+    options: { parseFrontmatter: true }
+  });
 
   return {
     ...post,
-    content: mdxSource,
+    content,
   };
 }
-
-// export function searchPosts(searchTerm: string): Post[] {
-//   const allPosts = getAllPosts();
-//   return allPosts.filter(post => {
-//     const contentString = typeof post.content === 'string' ? post.content : JSON.stringify(post.content);
-//     return post.title.toLowerCase().includes(searchTerm.toLowerCase()) 
-//             || contentString.toLowerCase().includes(searchTerm.toLowerCase());
-//   });
-// }

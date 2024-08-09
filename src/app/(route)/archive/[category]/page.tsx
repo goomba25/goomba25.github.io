@@ -24,7 +24,9 @@ export default async function CategoryPage({params}: {params: {category: string}
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>'{displayName}' List</h1>
-      <PostList posts={posts.slice((currentPage - 1) * postsPerPage, currentPage * postsPerPage)} />
+      <PostList posts={posts.slice((currentPage - 1) * postsPerPage, 
+        currentPage * postsPerPage)}
+        category={params.category} />
       <Pagination totalPosts={posts.length} postsPerPage={postsPerPage} currentPage={currentPage} />
     </div>
   );
