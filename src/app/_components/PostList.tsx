@@ -12,7 +12,9 @@ export default function PostList({ posts, category } : PostListProps) {
       {filteredPosts.map((post) => (
         <li key={post.slug} className={styles.postItem}>
           <Link 
-            href={`/posts/${post.slug}`}
+            href={category === 'all'
+              ? `/archive/${post.categories[0]}/${post.slug}`
+              : `/archive/${category}/${post.slug}`}
             className={styles.postTitle}>
             {post.title}
           </Link>

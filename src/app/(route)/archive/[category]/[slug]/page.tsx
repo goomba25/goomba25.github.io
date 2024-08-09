@@ -13,7 +13,7 @@ export default async function PostPage({
     <article className={styles.container}>
       <h1 className={styles.title}>{post.title}</h1>
       <div className={styles.meta}>
-        <time>{post.date}</time>
+        <time>{new Date(post.date).toLocaleDateString()}</time>
         <ul className={styles.categories}>
           {post.categories.map(category => (
             <li key={category}>{category}</li>
