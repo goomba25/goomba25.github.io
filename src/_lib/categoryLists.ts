@@ -1,21 +1,26 @@
 export const CategoryLists = [
   {
-    title: "C Family",
+    title: "Programming",
     items: [
-      { name: "C 언어", slug: "C", displayName: "C 언어" },
-      { name: "C++ 언어", slug: "Cpp", displayName: "C++ 언어" },
-      { name: "STL", slug: "STL", displayName: "Standard Template Library" },
+      { name: "C/C++", slug: "cpp", displayName: "C/C++" },
+      { name: "STL", slug: "stl", displayName: "Standard Template Library" },
+      { name: "Algorithm", slug: "algorithm", displayName: "Algorithm" },
     ],
   },
   {
-    title: "Tools",
+    title: "Security",
     items: [
-      { name: "Docker", slug: "Docker", displayName: "Docker" },
-      { name: "Git", slug: "Git", displayName: "Git" },
+      { name: "Cryptography", slug: "crypto", displayName: "Cryptography" },
+      { name: "OP-TEE", slug: "optee", displayName: "OP-TEE" },
     ],
   },
   {
-    title: "ETC.",
-    items: [{ name: "OPTEE", slug: "optee", displayName: "OPTEE Environment" }],
+    title: "Tools & Env",
+    items: [
+      { name: "Git", slug: "git", displayName: "Git" },
+      { name: "Docker", slug: "docker", displayName: "Docker" },
+      { name: "Build", slug: "build", displayName: "Build" },
+      { name: "ETC", slug: "etc", displayName: "ETC" },
+    ],
   },
 ];
