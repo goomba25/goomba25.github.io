@@ -4,6 +4,12 @@ on:
   push:
     branches:
       - master # branch
+  repository_dispatch:
+    types: [content-updated]
+
+concurrency:
+  group: pages-deploy
+  cancel-in-progress: true
 
 jobs:
   build-and-deploy:
@@ -14,13 +20,24 @@ jobs:
         node-version: [20.x]
 
     steps:
-      - name: Checkout 🛎️
+      - name: Checkout blog repo 🛎️
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # blog-content git을 _posts/로 checkout
+      - name: Checkout blog-contents into _posts
+        uses: actions/checkout@v4
+        with:
+          repository: goomba25/blog-contents
+          ref: main
+          path: _posts
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
+          cache: 'npm'
 
       - name: Install
         run : npm ci
@@ -35,4 +52,4 @@ jobs:
         with:
           branch: gh-pages
           folder: out
-          claen: true
+          clean: true
