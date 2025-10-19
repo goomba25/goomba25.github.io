@@ -1,0 +1,165 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/e4af272ccee01ff0-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="stylesheet" href="/_next/static/css/2796fe76a6ba46b7.css" data-precedence="next"/><link rel="stylesheet" href="/_next/static/css/8b64ed14234c99bc.css" data-precedence="next"/><link rel="stylesheet" href="/_next/static/css/ef46db3751d8e999.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-be4dbe7908d70db2.js"/><script src="/_next/static/chunks/fd9d1056-be48aeae6e94b8d1.js" async=""></script><script src="/_next/static/chunks/23-2869c8abb892f3e5.js" async=""></script><script src="/_next/static/chunks/main-app-0e30f491eaab1626.js" async=""></script><script src="/_next/static/chunks/231-d28521b9a1ca2868.js" async=""></script><script src="/_next/static/chunks/app/(route)/archive/%5Bcategory%5D/page-fa11e7c7fe551c79.js" async=""></script><script src="/_next/static/chunks/app/layout-e031c8d135452b2e.js" async=""></script><title>Goomba&#x27;s Pages</title><meta name="description" content="Goomba&#x27;s Github pages, using NextJS"/><link rel="icon" href="/favicon.ico"/><meta name="next-size-adjust"/><script src="/_next/static/chunks/polyfills-78c92fac7aa8fdd8.js" noModule=""></script></head><body class="__className_f367f3"><header class="header_global__GSqlr"><a class="header_page_name__AH74f" href="/">Goomba</a><nav class="header_nav__TS4hp"><ul class="header_list__4_ozN"><li class="header_list_item__xbgaq"><a class="header_nav_link__q0iPN" href="/">Profile</a></li><li class="header_list_item__xbgaq"><a class="header_nav_link__q0iPN" href="/archive">Archive</a></li></ul></nav></header><main class="layout_main__Z_K3S"><div class="sublayout_layout__AH4re"><div class="sublayout_sidebar__lw1oC"><aside class="sidebar_sidebar__A9Lnm"><div class="sidebar_sidebarSection__PxRiE"><h3 class="sidebar_sidebarTitle__0wfLW">Programming</h3><ul class="sidebar_sidebarList__fMWCO"><li class="sidebar_sidebarItem__2RyXS"><a href="/archive/cpp">C/C++</a></li><li class="sidebar_sidebarItem__2RyXS"><a href="/archive/stl">STL</a></li><li class="sidebar_sidebarItem__2RyXS"><a href="/archive/algorithm">Algorithm</a></li></ul></div><div class="sidebar_sidebarSection__PxRiE"><h3 class="sidebar_sidebarTitle__0wfLW">Security</h3><ul class="sidebar_sidebarList__fMWCO"><li class="sidebar_sidebarItem__2RyXS"><a href="/archive/crypto">Cryptography</a></li><li class="sidebar_sidebarItem__2RyXS"><a href="/archive/optee">OP-TEE</a></li></ul></div><div class="sidebar_sidebarSection__PxRiE"><h3 class="sidebar_sidebarTitle__0wfLW">Tools &amp; Env</h3><ul class="sidebar_sidebarList__fMWCO"><li class="sidebar_sidebarItem__2RyXS"><a href="/archive/git">Git</a></li><li class="sidebar_sidebarItem__2RyXS"><a href="/archive/docker">Docker</a></li><li class="sidebar_sidebarItem__2RyXS"><a href="/archive/build">Build</a></li><li class="sidebar_sidebarItem__2RyXS"><a href="/archive/etc">ETC</a></li></ul></div></aside></div><div class="sublayout_content__LeFXo"><article class="postPage_container__Bch1t"><h1 class="postPage_title__tBgth">[통신] 소켓 통신 개념 및 TCP/IP</h1><div class="postPage_meta__Yk8Cm"><time>10/19/2025</time><ul><li>etc</li></ul></div><div class="postPage_contents__3OW6N"><h1>개념</h1>
+<p>소켓이란 단어의 뜻 그래도 본다면 어떠한 것을 연결하는 하나의 &#x27;창구&#x27;라고 생각합니다.<br/>
+<!-- -->여기서는 데이터가 오가는 하나의 &#x27;창구&#x27; 개념이 되겠네요.</p>
+<p>그리고 소켓은 기본적으로 &#x27;하나&#x27;의 창구이기 떄문에 두 곳에서 데이터를 송수신하려면<br/>
+<!-- -->개별적으로 소켓을 하나씩 가지고 있어야 합니다.</p>
+<p>데이터를 요청하는 클라이언트(Client)와 응답하는 서버(Server)의 형태로 나눌 수 있는데,<br/>
+<!-- -->대부분 비슷하다고 합니다.</p>
+<h3>클라이언트</h3>
+<pre><code class="language-txt">socket()  →  connect()  →  send()/recv()
+</code></pre>
+<h3>서버</h3>
+<pre><code class="language-txt">socket()  →  bind()  →  listen()  →  accept()  →  recv()/send()
+</code></pre>
+<h3>각 단계별 역할</h3>
+<p>각 단계의 역할을 간단하게 정리했습니다.</p>
+<p>|Function|Description|
+|:--|:--|
+|socket()	    |소켓 생성 (통신용 File Descriptor)|
+|bind()	        |IP 주소와 포트를 소켓에 연결|
+|listen()	    |클라이언트 연결 요청 대기 상태로 설정|
+|accept()	    |연결 요청을 받아들이고 새로운 소켓 생성|
+|connect()	    |클라이언트가 서버에 연결 요청|
+|send()/recv()	|양방향 데이터 송수신|</p>
+<h1>TCP/IP 통신</h1>
+<p>TCP/IP 통신이란, 네트워크에서 데이터를 주고받기 위한 “표준 통신 프로토콜”입니다.<br/>
+<!-- -->TCP/IP는 하나의 프로토콜이 아닌 두 개의 TCP 그리고 IP 프로토콜을 합쳐서 부르는 용어라고 합니다.</p>
+<h3>TCP</h3>
+<p><code>Transmission Control Protocol</code>의 약자로 IP 위에서 동작하는 프로토콜로<br/>
+<!-- -->데이터 전송을 보증하며 보낸 순서대로 받을 수 있습니다.
+즉, 데이터를 신뢰성 있게 주고받는 역할을 합니다.</p>
+<h3>IP</h3>
+<p><code>Internet Protocol</code>의 약자로 데이터를 어디로 보낼 지 주소를 지정하는 역할을 합니다.<br/>
+<!-- -->다만 패킷 전달 여부를 보증할 수 없고 순서도 다를 수 있다고 합니다.</p>
+<h2>계층 구조</h2>
+<p>TCP/IP는 총 4 개의 계층 구조를 가지고 있습니다.</p>
+<p>|Layer|Description|Example|
+|:--|:--|:--|
+|응용 계층 (Application)                    |실제 서비스| HTTP, FTP 등|
+|전송 계층 (Transport)                      |패킷을 조립하고 전송|TCP, UDP|
+|인터넷 계층 (Internet)                     |패킷의 경로 설정 및 전송|IP|
+|네트워크 인터페이스 계층 (Network Interface)   |물리적 네트워크로 실제 하드웨어 전송|이더넷, wifi|</p>
+<p>응용 계층을 시작으로 네트워크 인터페이스 계층을 통해 전송하며<br/>
+<!-- -->수신할 때는 반대로 네트워크 인터페이스 계층을 시작으로 응용 계층으로 도달한다고 합니다.</p>
+<h1>예제</h1>
+<p>간단하게 C로 작성된 TCP/IP 소켓 통신 예제입니다.</p>
+<h2>클라이언트</h2>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;string.h&gt;
+#include &lt;unistd.h&gt;
+#include &lt;arpa/inet.h&gt;
+
+#define PORT 8000
+#define BUFFER_SIZE 1024
+
+int main(void)
+{
+    int socket_fd;
+    struct sockaddr_in server_addr;
+    char buffer[BUFFER_SIZE];
+
+    socket_fd = socket(AF_INET, SOCK_STREAM, 0);
+    if (socket_fd &lt; 0)
+    {
+        perror(&quot;socket&quot;);
+        exit(1);
+    }
+
+    memset(&amp;server_addr, 0, sizeof(server_addr));
+    server_addr.sin_family = AF_INET;
+    server_addr.sin_port = htons(PORT);
+    server_addr.sin_addr.s_addr = inet_addr(&quot;127.0.0.1&quot;);
+
+    if (connect(socket_fd, (struct sockaddr *)&amp;server_addr, sizeof(server_addr)) &lt; 0)
+    {
+        perror(&quot;connect&quot;);
+        close(socket_fd);
+        exit(1);
+    }
+    printf(&quot;[Client] Connected to server.\n&quot;);
+
+    const char *msg = &quot;Hello from Client!&quot;;
+    send(socket_fd, msg, strlen(msg), 0);
+    printf(&quot;[Client] Sent: %s\n&quot;, msg);
+
+    memset(buffer, 0, BUFFER_SIZE);
+    recv(socket_fd, buffer, BUFFER_SIZE, 0);
+    printf(&quot;[Client] Received: %s\n&quot;, buffer);
+
+    close(socket_fd);
+    printf(&quot;[Client] Connection closed.\n&quot;);
+
+    return 0;
+}
+</code></pre>
+<h2>서버</h2>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;string.h&gt;
+#include &lt;unistd.h&gt;
+#include &lt;arpa/inet.h&gt;
+
+#define PORT 8000
+#define BUFFER_SIZE 1024
+
+int main(void)
+{
+    int listen_fd, connection_fd;
+    struct sockaddr_in server_addr, client_addr;
+    socklen_t client_len = sizeof(client_addr);
+    char buffer[BUFFER_SIZE];
+
+    listen_fd = socket(AF_INET, SOCK_STREAM, 0);
+    if (listen_fd &lt; 0)
+    {
+        perror(&quot;socket&quot;);
+        exit(1);
+    }
+
+    memset(&amp;server_addr, 0, sizeof(server_addr));
+    server_addr.sin_family = AF_INET;
+    server_addr.sin_addr.s_addr = htonl(INADDR_ANY); // 모든 IP에서 접속 허용
+    server_addr.sin_port = htons(PORT);
+
+    if (bind(listen_fd, (struct sockaddr *)&amp;server_addr, sizeof(server_addr)) &lt; 0)
+    {
+        perror(&quot;bind&quot;);
+        close(listen_fd);
+        exit(1);
+    }
+
+    if (listen(listen_fd, 5) &lt; 0)
+    {
+        perror(&quot;listen&quot;);
+        close(listen_fd);
+        exit(1);
+    }
+
+    printf(&quot;[Server] Listening on port %d...\n&quot;, PORT);
+
+    connection_fd = accept(listen_fd, (struct sockaddr *)&amp;client_addr, &amp;client_len);
+    if (connection_fd &lt; 0)
+    {
+        perror(&quot;accept&quot;);
+        close(listen_fd);
+        exit(1);
+    }
+
+    printf(&quot;[Server] Client connected! FD=%d\n&quot;, connection_fd);
+
+    memset(buffer, 0, BUFFER_SIZE);
+    recv(connection_fd, buffer, BUFFER_SIZE, 0);
+    printf(&quot;[Server] Received: %s\n&quot;, buffer);
+
+    const char *msg = &quot;Hello from Server!&quot;;
+    send(connection_fd, msg, strlen(msg), 0);
+    printf(&quot;[Server] Sent: %s\n&quot;, msg);
+
+    close(connection_fd);
+    close(listen_fd);
+    printf(&quot;[Server] Connection closed.\n&quot;);
+
+    return 0;
+}
+</code></pre></div></article></div></div></main><footer class="footer_global__eUE2U"><p class="footer_copyright__Uzpxs">© <span></span> Goomba&#x27;s github blog. All Rights Reserved.</p></footer><button class="scrollbutton_scrollToTop__zwz9_">↑</button><script src="/_next/static/chunks/webpack-be4dbe7908d70db2.js" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0]);self.__next_f.push([2,null])</script><script>self.__next_f.push([1,"1:HL[\"/_next/static/media/e4af272ccee01ff0-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n2:HL[\"/_next/static/css/2796fe76a6ba46b7.css\",\"style\"]\n3:HL[\"/_next/static/css/8b64ed14234c99bc.css\",\"style\"]\n4:HL[\"/_next/static/css/ef46db3751d8e999.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"5:I[5751,[],\"\"]\n8:I[9275,[],\"\"]\nb:I[1343,[],\"\"]\nc:I[231,[\"231\",\"static/chunks/231-d28521b9a1ca2868.js\",\"252\",\"static/chunks/app/(route)/archive/%5Bcategory%5D/page-fa11e7c7fe551c79.js\"],\"\"]\n11:I[9802,[\"231\",\"static/chunks/231-d28521b9a1ca2868.js\",\"185\",\"static/chunks/app/layout-e031c8d135452b2e.js\"],\"default\"]\n13:I[6130,[],\"\"]\n9:[\"category\",\"etc\",\"d\"]\na:[\"slug\",\"socket_communication\",\"d\"]\nd:{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"}\ne:{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"}\nf:{\"display\":\"inline-block\"}\n10:{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0}\n14:[]\n"])</script><script>self.__next_f.push([1,"0:[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/2796fe76a6ba46b7.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\"}]],[\"$\",\"$L5\",null,{\"buildId\":\"a2di8TzJqRpItjECmJlu1\",\"assetPrefix\":\"\",\"initialCanonicalUrl\":\"/archive/etc/socket_communication\",\"initialTree\":[\"\",{\"children\":[\"(route)\",{\"children\":[\"archive\",{\"children\":[[\"category\",\"etc\",\"d\"],{\"children\":[[\"slug\",\"socket_communication\",\"d\"],{\"children\":[\"__PAGE__?{\\\"category\\\":\\\"etc\\\",\\\"slug\\\":\\\"socket_communication\\\"}\",{}]}]}]}]}]},\"$undefined\",\"$undefined\",true],\"initialSeedData\":[\"\",{\"children\":[\"(route)\",{\"children\":[\"archive\",{\"children\":[[\"category\",\"etc\",\"d\"],{\"children\":[[\"slug\",\"socket_communication\",\"d\"],{\"children\":[\"__PAGE__\",{},[[\"$L6\",\"$L7\"],null],null]},[\"$\",\"$L8\",null,{\"parallelRouterKey\":\"children\",\"segmentPath\":[\"children\",\"(route)\",\"children\",\"archive\",\"children\",\"$9\",\"children\",\"$a\",\"children\"],\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$Lb\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"notFoundStyles\":\"$undefined\",\"styles\":[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/ef46db3751d8e999.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\"}]]}],null]},[\"$\",\"$L8\",null,{\"parallelRouterKey\":\"children\",\"segmentPath\":[\"children\",\"(route)\",\"children\",\"archive\",\"children\",\"$9\",\"children\"],\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$Lb\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"notFoundStyles\":\"$undefined\",\"styles\":null}],null]},[[\"$\",\"div\",null,{\"className\":\"sublayout_layout__AH4re\",\"children\":[[\"$\",\"div\",null,{\"className\":\"sublayout_sidebar__lw1oC\",\"children\":[\"$\",\"aside\",null,{\"className\":\"sidebar_sidebar__A9Lnm\",\"children\":[[\"$\",\"div\",\"Programming\",{\"className\":\"sidebar_sidebarSection__PxRiE\",\"children\":[[\"$\",\"h3\",null,{\"className\":\"sidebar_sidebarTitle__0wfLW\",\"children\":\"Programming\"}],[\"$\",\"ul\",null,{\"className\":\"sidebar_sidebarList__fMWCO\",\"children\":[[\"$\",\"li\",\"cpp\",{\"className\":\"sidebar_sidebarItem__2RyXS\",\"children\":[\"$\",\"$Lc\",null,{\"href\":\"/archive/cpp\",\"children\":\"C/C++\"}]}],[\"$\",\"li\",\"stl\",{\"className\":\"sidebar_sidebarItem__2RyXS\",\"children\":[\"$\",\"$Lc\",null,{\"href\":\"/archive/stl\",\"children\":\"STL\"}]}],[\"$\",\"li\",\"algorithm\",{\"className\":\"sidebar_sidebarItem__2RyXS\",\"children\":[\"$\",\"$Lc\",null,{\"href\":\"/archive/algorithm\",\"children\":\"Algorithm\"}]}]]}]]}],[\"$\",\"div\",\"Security\",{\"className\":\"sidebar_sidebarSection__PxRiE\",\"children\":[[\"$\",\"h3\",null,{\"className\":\"sidebar_sidebarTitle__0wfLW\",\"children\":\"Security\"}],[\"$\",\"ul\",null,{\"className\":\"sidebar_sidebarList__fMWCO\",\"children\":[[\"$\",\"li\",\"crypto\",{\"className\":\"sidebar_sidebarItem__2RyXS\",\"children\":[\"$\",\"$Lc\",null,{\"href\":\"/archive/crypto\",\"children\":\"Cryptography\"}]}],[\"$\",\"li\",\"optee\",{\"className\":\"sidebar_sidebarItem__2RyXS\",\"children\":[\"$\",\"$Lc\",null,{\"href\":\"/archive/optee\",\"children\":\"OP-TEE\"}]}]]}]]}],[\"$\",\"div\",\"Tools \u0026 Env\",{\"className\":\"sidebar_sidebarSection__PxRiE\",\"children\":[[\"$\",\"h3\",null,{\"className\":\"sidebar_sidebarTitle__0wfLW\",\"children\":\"Tools \u0026 Env\"}],[\"$\",\"ul\",null,{\"className\":\"sidebar_sidebarList__fMWCO\",\"children\":[[\"$\",\"li\",\"git\",{\"className\":\"sidebar_sidebarItem__2RyXS\",\"children\":[\"$\",\"$Lc\",null,{\"href\":\"/archive/git\",\"children\":\"Git\"}]}],[\"$\",\"li\",\"docker\",{\"className\":\"sidebar_sidebarItem__2RyXS\",\"children\":[\"$\",\"$Lc\",null,{\"href\":\"/archive/docker\",\"children\":\"Docker\"}]}],[\"$\",\"li\",\"build\",{\"className\":\"sidebar_sidebarItem__2RyXS\",\"children\":[\"$\",\"$Lc\",null,{\"href\":\"/archive/build\",\"children\":\"Build\"}]}],[\"$\",\"li\",\"etc\",{\"className\":\"sidebar_sidebarItem__2RyXS\",\"children\":[\"$\",\"$Lc\",null,{\"href\":\"/archive/etc\",\"children\":\"ETC\"}]}]]}]]}]]}]}],[\"$\",\"div\",null,{\"className\":\"sublayout_content__LeFXo\",\"children\":[\"$\",\"$L8\",null,{\"parallelRouterKey\":\"children\",\"segmentPath\":[\"children\",\"(route)\",\"children\",\"archive\",\"children\"],\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$Lb\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"notFoundStyles\":\"$undefined\",\"styles\":null}]}]]}],null],null]},[\"$\",\"$L8\",null,{\"parallelRouterKey\":\"children\",\"segmentPath\":[\"children\",\"(route)\",\"children\"],\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$Lb\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":\"404\"}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],\"notFoundStyles\":[],\"styles\":[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/8b64ed14234c99bc.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\"}]]}],null]},[[\"$\",\"html\",null,{\"lang\":\"en\",\"children\":[\"$\",\"body\",null,{\"className\":\"__className_f367f3\",\"children\":[[\"$\",\"header\",null,{\"className\":\"header_global__GSqlr\",\"children\":[[\"$\",\"$Lc\",null,{\"href\":\"/\",\"className\":\"header_page_name__AH74f\",\"children\":\"Goomba\"}],[\"$\",\"nav\",null,{\"className\":\"header_nav__TS4hp\",\"children\":[\"$\",\"ul\",null,{\"className\":\"header_list__4_ozN\",\"children\":[[\"$\",\"li\",null,{\"className\":\"header_list_item__xbgaq\",\"children\":[\"$\",\"$Lc\",null,{\"href\":\"/\",\"className\":\"header_nav_link__q0iPN\",\"children\":\"Profile\"}]}],[\"$\",\"li\",null,{\"className\":\"header_list_item__xbgaq\",\"children\":[\"$\",\"$Lc\",null,{\"href\":\"/archive\",\"className\":\"header_nav_link__q0iPN\",\"children\":\"Archive\"}]}]]}]}]]}],[\"$\",\"main\",null,{\"className\":\"layout_main__Z_K3S\",\"children\":[\"$\",\"$L8\",null,{\"parallelRouterKey\":\"children\",\"segmentPath\":[\"children\"],\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$Lb\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":\"$d\",\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":\"$e\",\"children\":\"404\"}],[\"$\",\"div\",null,{\"style\":\"$f\",\"children\":[\"$\",\"h2\",null,{\"style\":\"$10\",\"children\":\"This page could not be found.\"}]}]]}]}]],\"notFoundStyles\":[],\"styles\":null}]}],[\"$\",\"footer\",null,{\"className\":\"footer_global__eUE2U\",\"children\":[\"$\",\"p\",null,{\"className\":\"footer_copyright__Uzpxs\",\"children\":[\"© \",[\"$\",\"span\",null,{}],\" Goomba's github blog. All Rights Reserved.\"]}]}],[\"$\",\"$L11\",null,{}]]}]}],null],null],\"couldBeIntercepted\":false,\"initialHead\":[false,\"$L12\"],\"globalErrorComponent\":\"$13\",\"missingSlots\":\"$W14\"}]]\n"])</script><script>self.__next_f.push([1,"15:T461,#include \u003cstdio.h\u003e\n#include \u003cstdlib.h\u003e\n#include \u003cstring.h\u003e\n#include \u003cunistd.h\u003e\n#include \u003carpa/inet.h\u003e\n\n#define PORT 8000\n#define BUFFER_SIZE 1024\n\nint main(void)\n{\n    int socket_fd;\n    struct sockaddr_in server_addr;\n    char buffer[BUFFER_SIZE];\n\n    socket_fd = socket(AF_INET, SOCK_STREAM, 0);\n    if (socket_fd \u003c 0)\n    {\n        perror(\"socket\");\n        exit(1);\n    }\n\n    memset(\u0026server_addr, 0, sizeof(server_addr));\n    server_addr.sin_family = AF_INET;\n    server_addr.sin_port = htons(PORT);\n    server_addr.sin_addr.s_addr = inet_addr(\"127.0.0.1\");\n\n    if (connect(socket_fd, (struct sockaddr *)\u0026server_addr, sizeof(server_addr)) \u003c 0)\n    {\n        perror(\"connect\");\n        close(socket_fd);\n        exit(1);\n    }\n    printf(\"[Client] Connected to server.\\n\");\n\n    const char *msg = \"Hello from Client!\";\n    send(socket_fd, msg, strlen(msg), 0);\n    printf(\"[Client] Sent: %s\\n\", msg);\n\n    memset(buffer, 0, BUFFER_SIZE);\n    recv(socket_fd, buffer, BUFFER_SIZE, 0);\n    printf(\"[Client] Received: %s\\n\", buffer);\n\n    close(socket_fd);\n    printf(\"[Client] Connection closed.\\n\");\n\n    return 0;\n}\n16:T667,#include \u003cstdio.h\u003e\n#include \u003cstdlib.h\u003e\n#include \u003cstring.h\u003e\n#include \u003cunistd.h\u003e\n#include \u003carpa/inet.h\u003e\n\n#define PORT 8000\n#define BUFFER_SIZE 1024\n\nint main(void)\n{\n    int listen_fd, connection_fd;\n    struct sockaddr_in server_addr, client_addr;\n    socklen_t client_len = sizeof(client_addr);\n    char buffer[BUFFER_SIZE];\n\n    listen_fd = socket(AF_INET, SOCK_STREAM, 0);\n    if (listen_fd \u003c 0)\n    {\n        perror(\"socket\");\n        exit(1);\n    }\n\n    memset(\u0026server_addr, 0, sizeof(server_addr));\n    server_addr.sin_family = AF_INET;\n    server_addr.sin_addr.s_addr = htonl(INADDR_ANY); // 모든 IP에서 접속 허용\n    server_addr.sin_port = htons(PORT);\n\n    if (bind(listen_fd, (struct sockaddr *)\u0026server_addr, sizeof(server_addr)) \u003c 0)\n    {\n        perror(\"bind\");\n        close(listen_fd);\n        exit(1);\n    }\n\n    if (listen(listen_fd, 5) \u003c 0)\n    {\n        perror(\"listen\");\n        close"])</script><script>self.__next_f.push([1,"(listen_fd);\n        exit(1);\n    }\n\n    printf(\"[Server] Listening on port %d...\\n\", PORT);\n\n    connection_fd = accept(listen_fd, (struct sockaddr *)\u0026client_addr, \u0026client_len);\n    if (connection_fd \u003c 0)\n    {\n        perror(\"accept\");\n        close(listen_fd);\n        exit(1);\n    }\n\n    printf(\"[Server] Client connected! FD=%d\\n\", connection_fd);\n\n    memset(buffer, 0, BUFFER_SIZE);\n    recv(connection_fd, buffer, BUFFER_SIZE, 0);\n    printf(\"[Server] Received: %s\\n\", buffer);\n\n    const char *msg = \"Hello from Server!\";\n    send(connection_fd, msg, strlen(msg), 0);\n    printf(\"[Server] Sent: %s\\n\", msg);\n\n    close(connection_fd);\n    close(listen_fd);\n    printf(\"[Server] Connection closed.\\n\");\n\n    return 0;\n}\n"])</script><script>self.__next_f.push([1,"7:[\"$\",\"article\",null,{\"className\":\"postPage_container__Bch1t\",\"children\":[[\"$\",\"h1\",null,{\"className\":\"postPage_title__tBgth\",\"children\":\"[통신] 소켓 통신 개념 및 TCP/IP\"}],[\"$\",\"div\",null,{\"className\":\"postPage_meta__Yk8Cm\",\"children\":[[\"$\",\"time\",null,{\"children\":\"10/19/2025\"}],[\"$\",\"ul\",null,{\"className\":\"$undefined\",\"children\":[[\"$\",\"li\",\"etc\",{\"children\":\"etc\"}]]}]]}],[\"$\",\"div\",null,{\"className\":\"postPage_contents__3OW6N\",\"children\":[[\"$\",\"h1\",null,{\"children\":\"개념\"}],\"\\n\",[\"$\",\"p\",null,{\"children\":[\"소켓이란 단어의 뜻 그래도 본다면 어떠한 것을 연결하는 하나의 '창구'라고 생각합니다.\",[\"$\",\"br\",null,{}],\"\\n\",\"여기서는 데이터가 오가는 하나의 '창구' 개념이 되겠네요.\"]}],\"\\n\",[\"$\",\"p\",null,{\"children\":[\"그리고 소켓은 기본적으로 '하나'의 창구이기 떄문에 두 곳에서 데이터를 송수신하려면\",[\"$\",\"br\",null,{}],\"\\n\",\"개별적으로 소켓을 하나씩 가지고 있어야 합니다.\"]}],\"\\n\",[\"$\",\"p\",null,{\"children\":[\"데이터를 요청하는 클라이언트(Client)와 응답하는 서버(Server)의 형태로 나눌 수 있는데,\",[\"$\",\"br\",null,{}],\"\\n\",\"대부분 비슷하다고 합니다.\"]}],\"\\n\",[\"$\",\"h3\",null,{\"children\":\"클라이언트\"}],\"\\n\",[\"$\",\"pre\",null,{\"children\":[\"$\",\"code\",null,{\"className\":\"language-txt\",\"children\":\"socket()  →  connect()  →  send()/recv()\\n\"}]}],\"\\n\",[\"$\",\"h3\",null,{\"children\":\"서버\"}],\"\\n\",[\"$\",\"pre\",null,{\"children\":[\"$\",\"code\",null,{\"className\":\"language-txt\",\"children\":\"socket()  →  bind()  →  listen()  →  accept()  →  recv()/send()\\n\"}]}],\"\\n\",[\"$\",\"h3\",null,{\"children\":\"각 단계별 역할\"}],\"\\n\",[\"$\",\"p\",null,{\"children\":\"각 단계의 역할을 간단하게 정리했습니다.\"}],\"\\n\",[\"$\",\"p\",null,{\"children\":\"|Function|Description|\\n|:--|:--|\\n|socket()\\t    |소켓 생성 (통신용 File Descriptor)|\\n|bind()\\t        |IP 주소와 포트를 소켓에 연결|\\n|listen()\\t    |클라이언트 연결 요청 대기 상태로 설정|\\n|accept()\\t    |연결 요청을 받아들이고 새로운 소켓 생성|\\n|connect()\\t    |클라이언트가 서버에 연결 요청|\\n|send()/recv()\\t|양방향 데이터 송수신|\"}],\"\\n\",[\"$\",\"h1\",null,{\"children\":\"TCP/IP 통신\"}],\"\\n\",[\"$\",\"p\",null,{\"children\":[\"TCP/IP 통신이란, 네트워크에서 데이터를 주고받기 위한 “표준 통신 프로토콜”입니다.\",[\"$\",\"br\",null,{}],\"\\n\",\"TCP/IP는 하나의 프로토콜이 아닌 두 개의 TCP 그리고 IP 프로토콜을 합쳐서 부르는 용어라고 합니다.\"]}],\"\\n\",[\"$\",\"h3\",null,{\"children\":\"TCP\"}],\"\\n\",[\"$\",\"p\",null,{\"children\":[[\"$\",\"code\",null,{\"children\":\"Transmission Control Protocol\"}],\"의 약자로 IP 위에서 동작하는 프로토콜로\",[\"$\",\"br\",null,{}],\"\\n\",\"데이터 전송을 보증하며 보낸 순서대로 받을 수 있습니다.\\n즉, 데이터를 신뢰성 있게 주고받는 역할을 합니다.\"]}],\"\\n\",[\"$\",\"h3\",null,{\"children\":\"IP\"}],\"\\n\",[\"$\",\"p\",null,{\"children\":[[\"$\",\"code\",null,{\"children\":\"Internet Protocol\"}],\"의 약자로 데이터를 어디로 보낼 지 주소를 지정하는 역할을 합니다.\",[\"$\",\"br\",null,{}],\"\\n\",\"다만 패킷 전달 여부를 보증할 수 없고 순서도 다를 수 있다고 합니다.\"]}],\"\\n\",[\"$\",\"h2\",null,{\"children\":\"계층 구조\"}],\"\\n\",[\"$\",\"p\",null,{\"children\":\"TCP/IP는 총 4 개의 계층 구조를 가지고 있습니다.\"}],\"\\n\",[\"$\",\"p\",null,{\"children\":\"|Layer|Description|Example|\\n|:--|:--|:--|\\n|응용 계층 (Application)                    |실제 서비스| HTTP, FTP 등|\\n|전송 계층 (Transport)                      |패킷을 조립하고 전송|TCP, UDP|\\n|인터넷 계층 (Internet)                     |패킷의 경로 설정 및 전송|IP|\\n|네트워크 인터페이스 계층 (Network Interface)   |물리적 네트워크로 실제 하드웨어 전송|이더넷, wifi|\"}],\"\\n\",[\"$\",\"p\",null,{\"children\":[\"응용 계층을 시작으로 네트워크 인터페이스 계층을 통해 전송하며\",[\"$\",\"br\",null,{}],\"\\n\",\"수신할 때는 반대로 네트워크 인터페이스 계층을 시작으로 응용 계층으로 도달한다고 합니다.\"]}],\"\\n\",[\"$\",\"h1\",null,{\"children\":\"예제\"}],\"\\n\",[\"$\",\"p\",null,{\"children\":\"간단하게 C로 작성된 TCP/IP 소켓 통신 예제입니다.\"}],\"\\n\",[\"$\",\"h2\",null,{\"children\":\"클라이언트\"}],\"\\n\",[\"$\",\"pre\",null,{\"children\":[\"$\",\"code\",null,{\"className\":\"language-c\",\"children\":\"$15\"}]}],\"\\n\",[\"$\",\"h2\",null,{\"children\":\"서버\"}],\"\\n\",[\"$\",\"pre\",null,{\"children\":[\"$\",\"code\",null,{\"className\":\"language-c\",\"children\":\"$16\"}]}]]}]]}]\n"])</script><script>self.__next_f.push([1,"12:[[\"$\",\"meta\",\"0\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}],[\"$\",\"meta\",\"1\",{\"charSet\":\"utf-8\"}],[\"$\",\"title\",\"2\",{\"children\":\"Goomba's Pages\"}],[\"$\",\"meta\",\"3\",{\"name\":\"description\",\"content\":\"Goomba's Github pages, using NextJS\"}],[\"$\",\"link\",\"4\",{\"rel\":\"icon\",\"href\":\"/favicon.ico\"}],[\"$\",\"meta\",\"5\",{\"name\":\"next-size-adjust\"}]]\n6:null\n"])</script></body></html>
