@@ -2,6 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 import { compileMDX } from 'next-mdx-remote/rsc'
+import remarkGfm from 'remark-gfm'
 import { Post, SerializedPost } from "@/_lib/_interface/post"
 
 const postsDirectory = path.join(process.cwd(), '_posts')
@@ -66,7 +67,12 @@ export async function getPostBySlug(category: string, slug: string) : Promise<Se
 
   const { content } = await compileMDX<{ title: string }>({
     source: post.content,
-    options: { parseFrontmatter: true }
+    options: {
+      parseFrontmatter: true,
+      mdxOptions: {
+        remarkPlugins: [remarkGfm],
+      }
+    }
   });
 
   return {
