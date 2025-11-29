@@ -20,7 +20,7 @@ export default async function PostPage({
           ))}
         </ul>
       </div>
-      <div className={styles.contents}>
+      <div className={styles.contents + " markdown"}>
         {post.content}
       </div>
     </article>
