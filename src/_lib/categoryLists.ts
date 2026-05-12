@@ -3,8 +3,9 @@ export const CategoryLists = [
     title: "Programming",
     items: [
       { name: "C/C++", slug: "cpp", displayName: "C/C++" },
-      { name: "STL", slug: "stl", displayName: "Standard Template Library" },
-      { name: "Algorithm", slug: "algorithm", displayName: "Algorithm" },
+      { name: "STL", slug: "stl", displayName: "STL & Data Structure" },
+      { name: "System Design", slug: "system", displayName: "Sytem Design" },
+      { name: "Algorithm", slug: "algorithm", displayName: "Coding Test & Algorithm" },
     ],
   },
   {
